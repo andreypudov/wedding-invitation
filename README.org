@@ -2,25 +2,25 @@
 #+AUTHOR: Pei Pei and Andrey
 #+DATE: <2025-08-26 Tue>
 
-* 💍 Our Wedding
+** 💍 Our Wedding
 
 This is the official wedding website for *Pei Pei and Andrey*.
-It is a place where we share the joy of our journey, details of our wedding day,
-and a way for our loved ones to join in our celebration.
 
-* ✨ What's Inside
+It is a place where we share the joy of our journey, details of our wedding day, and a way for our loved ones to join in our celebration.
 
-- *Our Story* :: A glimpse into our journey together.
-- *Wedding Details* :: Date, time, and location of the ceremony & reception.
-- *Travel Information* :: Helpful notes for family and friends coming from afar.
-- *Gallery* :: Photos and memories we treasure.
-- *RSVP* :: A simple way for guests to confirm their presence.
+** ✨ What's Inside
 
-* 🌐 Website
+- 📖 *Our Story* :: A glimpse into our journey together.
+- 📅 *Wedding Details* :: Date, time, and location of the ceremony & reception.
+- 🗺 *Travel Information* :: Helpful notes for family and friends coming from afar.
+- 📸 *Gallery* :: Photos and memories we treasure.
+- 📨 *RSVP* :: A simple way for guests to confirm their presence.
+
+** 🌐 Website
 
 Our wedding website lives at: [[https://peipeiandandrey.love][peipeiandandrey.love]]
 
-* 🛠 Behind the Scenes
+** 🛠 Behind the Scenes
 
 This site is built with love and care, using simple tools:
 
@@ -28,12 +28,12 @@ This site is built with love and care, using simple tools:
 - GitHub Pages for hosting
 - A custom domain: =peipeiandandrey.love=
 
-* ❤️ With Gratitude
+** ❤️ With Gratitude
 
 We dedicate this project to our family and friends, whose love and support have guided us.
 
 This website is more than code – it is a piece of our story.
 
-* 📄 License
+** 📄 License
 
 This project is private and created solely for our wedding celebration.
