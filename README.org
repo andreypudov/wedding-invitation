@@ -1,2 +1,13 @@
-* Pei Pei & Andrey Wedding
+* 💍 Pei Pei & Andrey Wedding Website
 
+This is the official wedding website for **Pei Pei and Andrey**.
+
+The site shares important details about our wedding day, including the ceremony, reception, travel tips, and RSVP information.
+
+** ✨ Features
+
+- 📖 *Our Story* – A little about us and our journey together.
+- 📅 *Wedding Details* – Ceremony & reception time, location, and schedule.
+- 🗺 *Travel Information* – Helpful info for guests traveling from abroad.
+- 📸 *Gallery* – Memories from our journey.
+- 📨 *RSVP* – A simple way for guests to confirm attendance.
