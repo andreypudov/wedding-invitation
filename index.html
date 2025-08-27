@@ -8,14 +8,42 @@
 
   <title>Pei Pei & Andrey Wedding</title>
 
+  <style>
+    .loader {
+      position: fixed;
+      inset: 0;
+      background: #b61c2b;
+      color: #e6ac7c;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      transition: opacity 0.4s ease, visibility 0.4s ease;
+    }
+  </style>
+
   <link href="/images/logo.svg?v=1.0" rel="icon" type="image/svg">
 
-  <!--<link href="/styles/lazy-image.css?v=1.5" rel="stylesheet" />-->
+  <link href="/styles/title.css?v=1.0" rel="stylesheet" />
+  <link href="/styles/layout.css?v=1.0" rel="stylesheet" />
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-WX4P1VKTPE"></script>
   <script src="/scripts/analytics.js?v=1.0" type="module"></script>
 </head>
 
 <body>
+  <div class="loader">
+  </div>
+
+  <div class="title">
+    <div class="names">
+      <span class="chinese">珮珮</span>
+      <span class="russian">&</span>
+      <span class="chinese">安德烈</span>
+    </div>
+    <div class="countdown"></div>
+  </div>
+
+  <script src="/scripts/loader.js?v=1.0" type="module"></script>
 </body>
 </html>
