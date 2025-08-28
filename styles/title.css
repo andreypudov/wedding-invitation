@@ -1,25 +1,148 @@
 .title {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
+  width: 80vw;
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
 
   .names {
-    font-size: var(--font-size-title);
-    font-weight: bold;
+    margin: 0;
+    font-size: 10vw;
+    white-space: nowrap;
 
-    .span {
-      margin: 0 0.5rem;
+    .separator {
+      font-family: var(--font-family-ru);
+      margin: 0 1rem;
+    }
+
+    @media (max-width: 576px) {
+      font-size: 16vw;
+
+      span {
+        display: block;
+      }
     }
   }
 
   .countdown {
-    font-size: 1.5rem;
+    font-size: 4vw;
+    margin-top: 1rem;
+
+    @media (max-width: 576px) {
+      font-size: 6vw;
+    }
+  }
+}
+
+.corners {
+  .corner {
+    position: absolute;
+    background-image: url("../images/corner-flowers.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 240px;
+    height: 240px;
+    filter: invert(71%) sepia(26%) saturate(584%) hue-rotate(345deg) brightness(98%) contrast(89%);
+
+    @media (max-width: 576px) {
+      width: 140px;
+      height: 140px;
+    }
+
+    &.top-left {
+      top: 0;
+      left: 0;
+      transform: rotate(90deg);
+    }
+
+    &.top-right {
+      top: 0;
+      right: 0;
+      transform: rotate(180deg)
+    }
+
+    &.bottom-left {
+      bottom: 0;
+      left: 0;
+      transform: rotate(0deg);
+    }
+
+    &.bottom-right {
+      bottom: 0;
+      right: 0;
+      transform: rotate(270deg);
+    }
+  }
+}
+
+.screen {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  will-change: clip-path;
+
+  &.screen-1 {
+    z-index: 2;
+    animation: split1 12s ease-in-out infinite;
+  }
+
+  &.screen-2 {
+    z-index: 1;
+    animation: split2 12s ease-in-out infinite;
+  }
+}
+
+.container-hero {
+  &.centered {
+    overflow-x: hidden !important;
+  }
+}
+
+.corners {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+}
+
+@keyframes split1 {
+  0%, 15% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+  35% {
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+  }
+  50% {
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+  }
+  50.001% {
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+  }
+  85%, 100% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+@keyframes split2 {
+  0%, 15% {
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+  }
+  35%, 50% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+  85%, 100% {
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .screen {
+    &.screen-1,
+    &.screen-2 {
+      animation: none;
+      opacity: 1;
+    }
   }
 }
