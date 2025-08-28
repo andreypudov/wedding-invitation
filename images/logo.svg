@@ -27,13 +27,13 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="px"
      inkscape:zoom="0.44922624"
-     inkscape:cx="440.75787"
-     inkscape:cy="470.80954"
-     inkscape:window-width="1656"
-     inkscape:window-height="974"
-     inkscape:window-x="48"
-     inkscape:window-y="61"
-     inkscape:window-maximized="0"
+     inkscape:cx="441.87089"
+     inkscape:cy="469.69652"
+     inkscape:window-width="1728"
+     inkscape:window-height="1051"
+     inkscape:window-x="0"
+     inkscape:window-y="38"
+     inkscape:window-maximized="1"
      inkscape:current-layer="layer1"
      showgrid="false" />
   <defs
@@ -68,7 +68,7 @@
      inkscape:groupmode="layer"
      id="layer1">
     <circle
-       style="fill:#a02e34;stroke:url(#goldGradient);stroke-width:30;stroke-dasharray:none;stroke-opacity:1;fill-opacity:1"
+       style="fill:#b61c2b;stroke:#e6ac7c;stroke-width:30;stroke-dasharray:none;stroke-opacity:1;fill-opacity:1"
        id="path3"
        cx="540"
        cy="540"
@@ -76,7 +76,7 @@
        r="490" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:666.667px;font-family:'Heiti TC';-inkscape-font-specification:'Heiti TC';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:url(#goldGradient);stroke-width:0;stroke-dasharray:none;stroke:none;fill-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:666.667px;font-family:'Heiti TC';-inkscape-font-specification:'Heiti TC';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#e6ac7c;fill-opacity:1;stroke:none;stroke-width:0;stroke-dasharray:none"
        x="206.6665"
        y="774.3338"
        id="text1"
@@ -85,6 +85,6 @@
          x="206.6665"
          y="774.3338"
          id="tspan2"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:666.667px;font-family:'Heiti SC';-inkscape-font-specification:'Heiti SC';stroke-width:0;stroke-dasharray:none;fill:url(#goldGradient);fill-opacity:1">囍</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:666.667px;font-family:'LXGW WenKai Mono TC';-inkscape-font-specification:'LXGW WenKai Mono TC';fill:#e6ac7c;fill-opacity:1;stroke-width:0;stroke-dasharray:none">囍</tspan></text>
   </g>
 </svg>
