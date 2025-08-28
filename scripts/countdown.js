@@ -35,11 +35,11 @@ function daysUntil(targetDateStr) {
 
 function getLeftTranslation(days) {
   if (days % 10 === 1 && days % 100 !== 11) {
-    return "Остался ";
+    return "остался ";
   } else if (days >= 2 && days <= 4) {
-    return "Осталось ";
+    return "осталось ";
   } else {
-    return "Осталось ";
+    return "осталось ";
   }
 }
 
@@ -58,4 +58,4 @@ const countdownChinese = document.querySelector('.countdown.chinese');
 countdownChinese.innerText = "倒數" + arabicToChinese(daysLeft) + "天";
 
 const countdownRussian = document.querySelector('.countdown.russian');
-countdownRussian.innerText = getLeftTranslation(daysLeft) + daysLeft + getDaysTranslation(daysLeft);
+countdownRussian.innerText = "До свадьбы " + getLeftTranslation(daysLeft) + daysLeft + getDaysTranslation(daysLeft);
