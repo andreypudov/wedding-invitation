@@ -1,6 +1,7 @@
 .title {
   width: 80vw;
   text-align: center;
+  text-shadow: 2px 2px 64px rgba(0, 0, 0, 0.2);
 
   .names {
     margin: 0;
@@ -32,6 +33,8 @@
 }
 
 .corners {
+  filter: opacity(0.8);
+
   .corner {
     position: absolute;
     background-image: url("../images/corner-flowers.svg");
