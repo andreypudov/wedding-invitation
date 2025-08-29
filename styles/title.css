@@ -41,6 +41,7 @@
 
   footer {
     position: fixed;
+    display: flex;
     bottom: var(--gap-lg);
 
     @media (max-width: 576px) {
