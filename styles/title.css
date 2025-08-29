@@ -99,7 +99,7 @@
       background-position: -50% 0, 0 0;
       background-clip: text, text;
       color: transparent;
-      animation: shiny-sweep 10s linear infinite;
+      animation: shiny-sweep 8s linear infinite;
     }
 
     .separator {
