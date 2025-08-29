@@ -1,3 +1,63 @@
+.container-hero {
+  position: fixed;
+  inset: 0;
+  background-color: var(--bg-primary);
+  border: 4px solid var(--bg-secondary);
+  box-sizing: border-box;
+  box-shadow: inset 0 0 256px rgba(0, 0, 0, 0.2);
+  overflow: auto;
+
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.02) 25%, transparent 25%, transparent 75%, rgba(255, 255, 255, 0.02) 75%, rgba(255, 255, 255, 0.02) 100%), linear-gradient(-45deg, rgba(255, 255, 255, 0.02) 25%, transparent 25%, transparent 75%, rgba(255, 255, 255, 0.02) 75%, rgba(255, 255, 255, 0.02) 100%);
+  background-size: 64px 64px;
+
+  &.centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  header {
+    position: fixed;
+    top: var(--gap-lg);
+
+    @media (max-width: 576px) {
+      top: var(--gap-xxl);
+    }
+
+    a {
+      color: var(--fg-primary);
+      opacity: 0.8;
+      text-decoration: none;
+      padding: var(--gap-sm) var(--gap-sm);
+      transition: all var(--transition);
+
+      &:hover {
+        background-color: var(--fg-primary);
+        color: var(--bg-primary);
+        transform: scale(var(--scale));
+      }
+    }
+  }
+
+  footer {
+    position: fixed;
+    bottom: var(--gap-lg);
+
+    @media (max-width: 576px) {
+      bottom: var(--gap-xxl);
+    }
+
+    a {
+      padding: var(--gap-sm) var(--gap-sm);
+
+      svg {
+        fill: var(--fg-primary);
+        opacity: 0.6;
+      }
+    }
+  }
+}
+
 .title {
   width: 80vw;
   text-align: center;
@@ -33,6 +93,8 @@
 }
 
 .corners {
+  position: absolute;
+  inset: 0;
   filter: opacity(0.8);
 
   .corner {
@@ -71,81 +133,6 @@
       bottom: 0;
       right: 0;
       transform: rotate(270deg);
-    }
-  }
-}
-
-.screen {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  will-change: clip-path;
-
-  &.screen-1 {
-    z-index: 2;
-    animation: split1 12s ease-in-out infinite;
-  }
-
-  &.screen-2 {
-    z-index: 1;
-    animation: split2 12s ease-in-out infinite;
-  }
-}
-
-.container-hero {
-  &.centered {
-    overflow-x: hidden !important;
-  }
-}
-
-.corners {
-  position: absolute;
-  inset: 0;
-  z-index: 5;
-  pointer-events: none;
-}
-
-@keyframes split1 {
-  0%, 15% {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-  }
-  35% {
-    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
-  }
-  50% {
-    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
-  }
-  50.001% {
-    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
-  }
-  85%, 100% {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-  }
-}
-
-@keyframes split2 {
-  0%, 15% {
-    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
-  }
-  35%, 50% {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-  }
-  85%, 100% {
-    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .screen {
-    &.screen-1,
-    &.screen-2 {
-      animation: none;
-      opacity: 1;
     }
   }
 }
