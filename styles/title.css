@@ -53,7 +53,18 @@
 
       svg {
         fill: var(--fg-primary);
+        height: 100%;
         opacity: 0.6;
+      }
+
+      &:hover {
+        background-color: var(--fg-primary);
+        transform: scale(var(--scale));
+
+        svg {
+          fill: var(--bg-primary);
+          opacity: 0.6;
+        }
       }
     }
   }
