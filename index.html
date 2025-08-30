@@ -103,6 +103,13 @@
   </script>
 
   <script type="module">
+    const monoStyle = [
+      'font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
+      'white-space: pre',
+      'font-variant-ligatures: none',
+      'line-height: 1.1'
+    ].join(';');
+
     console.log(`%c
         *****     *****
       ********* *********
@@ -112,7 +119,7 @@
           *********
             *****
               *
-      `, "color: pink; font-weight: bold;"); 
+      `, monoStyle + "; color: pink; font-weight: bold;"); 
 
     console.log("%cWedding Debug Mode Activated 🛠️", "color: #b61c2b; font-size: 16px; font-weight: bold;");
     console.log("Type %cacceptInvite()%c in the console to RSVP! 🎊", "color: green; font-weight: bold;", "");
