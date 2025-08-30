@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Pei Pei & Andrey Wedding">
+  <meta name="description" content="Свадьба Пейпей и Андрея">
 
-  <title>Pei Pei & Andrey Wedding</title>
+  <title>Свадьба Пейпей и Андрея</title>
 
   <style>
     .loader {
@@ -22,15 +22,15 @@
     }
   </style>
 
-  <link href="/images/logo.svg?v=1.3" rel="icon" type="image/svg+xml">
+  <link href="/images/logo.svg?v=1.4" rel="icon" type="image/svg+xml">
 
-  <link href="/styles/title.css?v=1.3" rel="stylesheet" />
-  <link href="/styles/layout.css?v=1.3" rel="stylesheet" />
+  <link href="/styles/title.css?v=1.4" rel="stylesheet" />
+  <link href="/styles/layout.css?v=1.4" rel="stylesheet" />
 
   <script src="/scripts/translation.js" type="module"></script>
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-WX4P1VKTPE"></script>
-  <script src="/scripts/analytics.js?v=1.3" type="module"></script>
+  <script src="/scripts/analytics.js?v=1.4" type="module"></script>
 </head>
 
 <body>
@@ -54,9 +54,9 @@
 
     <div class="title">
       <div class="names">
-        <span class="peipei"></span>
+        <span class="peipei">Пейпей</span>
         <span class="separator">&</span>
-        <span class="andrey"></span>
+        <span class="andrey">Андрей</span>
       </div>
     </div>
 
@@ -91,6 +91,7 @@
       const peipei = document.querySelector(".title .peipei");
       const andrey = document.querySelector(".title .andrey");
 
+      document.title = window.getString("title");
       title.className = `title ${language}`;
       peipei.textContent = window.getString("peiPei");
       andrey.textContent = window.getString("andrey");
@@ -101,6 +102,6 @@
     window.applyLanguage = applyLanguage;
   </script>
 
-  <script src="/scripts/loader.js?v=1.3" type="module"></script>
+  <script src="/scripts/loader.js?v=1.4" type="module"></script>
 </body>
 </html>

@@ -1,9 +1,11 @@
 const STRINGS = {
   russian: {
+    title: "Свадьба Пейпей и Андрея",
     peiPei: "Пейпей",
     andrey: "Андрей",
   },
   chinese: {
+    title: "珮珮和安德烈的婚礼",
     peiPei: "珮珮",
     andrey: "安德烈",
   },
