@@ -102,6 +102,28 @@
     window.applyLanguage = applyLanguage;
   </script>
 
+  <script type="module">
+    console.log(`%c
+        *****     *****
+      ********* *********
+      *******************
+      *****************
+        *************
+          *********
+            *****
+              *
+      `, "color: pink; font-weight: bold;"); 
+
+    console.log("%cWedding Debug Mode Activated 🛠️", "color: #b61c2b; font-size: 16px; font-weight: bold;");
+    console.log("Type %cacceptInvite()%c in the console to RSVP! 🎊", "color: green; font-weight: bold;", "");
+
+    function acceptInvite() {
+      console.log("🎉 Yay! You're virtually invited to celebrate love with us. 🎉");
+    }
+
+    window.acceptInvite = acceptInvite;
+  </script>
+
   <script src="/scripts/loader.js?v=1.4" type="module"></script>
 </body>
 </html>
