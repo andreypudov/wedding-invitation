@@ -109,6 +109,7 @@
 
     @media (max-width: 576px) {
       font-size: 16vw;
+      animation: shiny-sweep 6s linear infinite;
 
       span {
         display: block;
