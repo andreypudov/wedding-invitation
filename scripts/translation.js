@@ -5,7 +5,7 @@ const STRINGS = {
     andrey: "Андрей",
   },
   chinese: {
-    title: "珮珮和安德烈的婚礼",
+    title: "珮珮和安德烈的婚禮",
     peiPei: "珮珮",
     andrey: "安德烈",
   },
