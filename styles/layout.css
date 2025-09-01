@@ -57,15 +57,10 @@ body {
     padding: var(--gap-xl) 0;
     width: 100vw;
     background-color: rgba(0, 0, 0, 0.2);
+    flex-direction: column;
+    gap: var(--gap-md);
 
     .languages {
-      position: fixed;
-      top: var(--gap-lg);
-
-      @media (max-width: 576px) {
-        top: var(--gap-xxl);
-      }
-
       a {
         color: var(--fg-primary);
         opacity: 0.8;

@@ -1,15 +1,17 @@
 const STRINGS = {
   russian: {
-    title: "Свадьба Пейпей и Андрея",
+    titleHome: "Свадьба Пейпей и Андрея",
+    titleRSVP: "Подтверждение участия - Свадьба Пейпей и Андрея",
+
     peiPei: "Пейпей",
     andrey: "Андрей",
-    rsvp: "Подтверждение участия",
   },
   chinese: {
-    title: "珮珮和安德烈的婚禮",
+    titleHome: "珮珮和安德烈的婚禮",
+    titleRSVP: "回覆 - 珮珮和安德烈的婚禮",
+
     peiPei: "珮珮",
     andrey: "安德烈",
-    rsvp: "敬請回覆",
   },
 };
 
