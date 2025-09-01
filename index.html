@@ -24,10 +24,11 @@
 
   <link href="/images/logo.svg?v=1.4" rel="icon" type="image/svg+xml">
 
-  <link href="/styles/title.css?v=1.4" rel="stylesheet" />
   <link href="/styles/layout.css?v=1.4" rel="stylesheet" />
+  <link href="/styles/home.css?v=1.4" rel="stylesheet" />
 
-  <script src="/scripts/translation.js" type="module"></script>
+  <script src="/scripts/translation.js?v=1.4" type="module"></script>
+  <script src="/scripts/debug.js?v=1.4" type="module"></script>
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-WX4P1VKTPE"></script>
   <script src="/scripts/analytics.js?v=1.4" type="module"></script>
@@ -37,7 +38,7 @@
   <div class="loader">
   </div>
 
-  <div class="container-hero centered">
+  <header class="container-hero centered">
     <div class="corners">
       <div class="corner top-left"></div>
       <div class="corner top-right"></div>
@@ -45,12 +46,10 @@
       <div class="corner bottom-right"></div>
     </div>
 
-    <header>
-      <div class="languages">
-        <a class="language" href="javascript:void(0)" onclick="window.applyLanguage('russian')">Русский</a>
-        <a class="language" href="javascript:void(0)" onclick="window.applyLanguage('chinese')">中文</a>
-      </div>
-    </header>
+    <div class="languages">
+      <a class="language" href="javascript:void(0)" onclick="window.applyLanguage('russian')">Русский</a>
+      <a class="language" href="javascript:void(0)" onclick="window.applyLanguage('chinese')">中文</a>
+    </div>
 
     <div class="title">
       <div class="names">
@@ -81,7 +80,7 @@
         </svg>
       </a>
     </footer>
-  </div>
+  </header>
 
   <script type="module">
     function applyLanguage(language) {
@@ -100,40 +99,6 @@
     applyLanguage(window.language);
 
     window.applyLanguage = applyLanguage;
-  </script>
-
-  <script type="module">
-    const monoStyle = [
-      'font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
-      'white-space: pre',
-      'font-variant-ligatures: none',
-      'line-height: 1.1'
-    ].join(';');
-
-    console.log(`%c
-        *****     *****
-      ********* *********
-      *******************
-      *****************
-        *************
-          *********
-            *****
-              *
-      `, monoStyle + "; color: pink; font-weight: bold;"); 
-
-    console.log("%cWedding Debug Mode Activated 🛠️", "color: #b61c2b; font-size: 16px; font-weight: bold;");
-    console.log("Type %cacceptInvite()%c in the console to RSVP! 🎊", "color: green; font-weight: bold;", "");
-
-    function acceptInvite() {
-      console.log("🎉 Yay! You're virtually invited to celebrate love with us. 🎉");
-
-      console.log("\n💌 Don't forget to follow our journey here:");
-      console.log("%c👉 VK:        https://vk.com/peipeiandandrey", monoStyle);
-      console.log("%c👉 Instagram: https://www.instagram.com/peipeiandandrey", monoStyle);
-      console.log("%c👉 Facebook:  https://www.facebook.com/peipeiandandrey", monoStyle);
-    }
-
-    window.acceptInvite = acceptInvite;
   </script>
 
   <script src="/scripts/loader.js?v=1.4" type="module"></script>

@@ -3,11 +3,13 @@ const STRINGS = {
     title: "Свадьба Пейпей и Андрея",
     peiPei: "Пейпей",
     andrey: "Андрей",
+    rsvp: "Подтверждение участия",
   },
   chinese: {
     title: "珮珮和安德烈的婚禮",
     peiPei: "珮珮",
     andrey: "安德烈",
+    rsvp: "敬請回覆",
   },
 };
 

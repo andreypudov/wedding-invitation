@@ -1,0 +1,11 @@
+.form-container {
+  max-width: 100%;
+  justify-content: center;
+  display: flex;
+
+  iframe {
+    width: 640px;
+    height: 1800px;
+    border: none;
+  }
+}
