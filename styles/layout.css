@@ -143,11 +143,6 @@ body {
     display: flex;
     justify-content: center;
     width: 100%;
-    margin-bottom: var(--gap-lg);
-
-    @media (max-width: 576px) {
-      bottom: var(--gap-xxl);
-    }
 
     a {
       padding: var(--gap-sm) var(--gap-sm);

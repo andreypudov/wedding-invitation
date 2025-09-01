@@ -26,7 +26,11 @@ header {
   footer {
     position: fixed;
     bottom: var(--gap-lg);
-    margin-bottom: 0 !important;
+   
+
+    @media (max-width: 576px) {
+      bottom: var(--gap-xxl);
+    }
   }
 }
 
