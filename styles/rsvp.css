@@ -2,10 +2,10 @@
   display: flex;
   justify-content: center;
   max-width: 100%;
+  pointer-events: auto;
 
   iframe {
     border: none;
-    display:block;
     height: 1800px;
     overflow:auto; 
     width: 640px;
