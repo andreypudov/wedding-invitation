@@ -22,11 +22,12 @@ header {
       }
     }
   }
-}
 
-footer {
-  position: fixed;
-  bottom: var(--gap-lg);
+  footer {
+    position: fixed;
+    bottom: var(--gap-lg);
+    margin-bottom: 0 !important;
+  }
 }
 
 .container-hero {
