@@ -2,12 +2,14 @@ body {
   border: 4px solid var(--bg-secondary);
   box-sizing: border-box;
   box-shadow: inset 0 0 256px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(180deg,rgba(138, 21, 33, 1) 0%, rgba(182, 28, 43, 1) 30%, rgba(182, 28, 43, 1) 100%) !important;
 }
 
 header {
   height: 240px;
 
   @media (max-width: 576px) {
+    padding-top: var(--gap-xxl);
     height: 140px;
   }
 }
