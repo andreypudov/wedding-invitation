@@ -1,11 +1,14 @@
 .form-container {
-  max-width: 100%;
-  justify-content: center;
   display: flex;
+  justify-content: center;
+  max-width: 100%;
 
   iframe {
-    width: 640px;
-    height: 1800px;
     border: none;
+    display:block;
+    height: 1800px;
+    overflow:auto; 
+    width: 640px;
+    -webkit-overflow-scrolling: touch; 
   }
 }
