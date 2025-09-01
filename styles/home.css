@@ -26,6 +26,7 @@ header {
 
 footer {
   position: fixed;
+  bottom: var(--gap-lg);
 }
 
 .container-hero {
