@@ -1,4 +1,13 @@
 header {
+  .languages {
+    position: fixed;
+    top: var(--gap-lg);
+
+    @media (max-width: 576px) {
+      top: var(--gap-xxl);
+    }
+  }
+
   .title {
     .names {
       font-size: 10vw;

@@ -39,6 +39,11 @@
   </div>
 
   <header>
+    <div class="languages">
+      <a class="language" href="javascript:void(0)" onclick="window.applyLanguage('russian')">Русский</a>
+      <a class="language" href="javascript:void(0)" onclick="window.applyLanguage('chinese')">中文</a>
+    </div>
+
     <div class="title">
       <div class="names">
         <span class="peipei">Пейпей</span>
@@ -84,7 +89,7 @@
       const peipei = document.querySelector(".title .peipei");
       const andrey = document.querySelector(".title .andrey");
 
-      document.title = window.getString("title");
+      document.title = window.getString("titleRSVP");
       title.className = `title ${language}`;
       peipei.textContent = window.getString("peiPei");
       andrey.textContent = window.getString("andrey");
