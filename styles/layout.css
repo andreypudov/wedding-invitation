@@ -56,7 +56,6 @@ header {
   display: flex;
   flex-direction: column;
   gap: var(--gap-md);
-  justify-content: center;
   width: 100%;
 
   .languages {
