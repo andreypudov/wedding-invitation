@@ -8,7 +8,7 @@ const STRINGS = {
   },
   chinese: {
     titleHome: "珮珮和安德烈的婚禮",
-    titleRSVP: "回覆 - 珮珮和安德烈的婚禮",
+    titleRSVP: "出席調查 - 珮珮和安德烈的婚禮",
 
     peiPei: "珮珮",
     andrey: "安德烈",
