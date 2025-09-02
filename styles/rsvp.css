@@ -21,11 +21,12 @@ header {
   width: 100%;
 
   overflow: scroll; 
+  scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
 
   iframe {
     height: 100%;
-    width: 95%;
+    width: 100%;
     border: none;
     display: block;
   }
@@ -35,6 +36,7 @@ header {
   position: absolute;
   inset: 0;
   filter: opacity(0.8);
+  z-index: -1;
 
   .corner {
     position: absolute;
