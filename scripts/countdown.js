@@ -53,9 +53,15 @@ function getDaysTranslation(days) {
   }
 }
 
-const daysLeft = daysUntil(weddingDate);
-const countdownChinese = document.querySelector('.countdown.chinese');
-countdownChinese.innerText = "倒數" + arabicToChinese(daysLeft) + "天";
+function updateCountdown(language) {
+  const daysLeft = daysUntil(weddingDate);
+  const countdown = document.getElementsByClassName("countdown")[0];
 
-const countdownRussian = document.querySelector('.countdown.russian');
-countdownRussian.innerText = "До свадьбы " + getLeftTranslation(daysLeft) + daysLeft + getDaysTranslation(daysLeft);
+  if (language === "chinese") {
+    countdown.innerText = "倒數" + arabicToChinese(daysLeft) + "天";
+  } else {
+    countdown.innerText = "До свадьбы " + getLeftTranslation(daysLeft) + daysLeft + getDaysTranslation(daysLeft);
+  }
+}
+
+window.updateCountdown = updateCountdown;
