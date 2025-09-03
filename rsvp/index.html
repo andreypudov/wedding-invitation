@@ -22,16 +22,16 @@
     }
   </style>
 
-  <link href="/images/logo.svg?v=1.16" rel="icon" type="image/svg+xml">
+  <link href="/images/logo.svg?v=1.17" rel="icon" type="image/svg+xml">
 
-  <link href="/styles/rsvp.css?v=1.16" rel="stylesheet" />
-  <link href="/styles/layout.css?v=1.16" rel="stylesheet" />
+  <link href="/styles/rsvp.css?v=1.17" rel="stylesheet" />
+  <link href="/styles/layout.css?v=1.17" rel="stylesheet" />
 
-  <script src="/scripts/translation.js?v=1.16" type="module"></script>
-  <script src="/scripts/debug.js?v=1.16" type="module"></script>
+  <script src="/scripts/translation.js?v=1.17" type="module"></script>
+  <script src="/scripts/debug.js?v=1.17" type="module"></script>
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-WX4P1VKTPE"></script>
-  <script src="/scripts/analytics.js?v=1.16" type="module"></script>
+  <script src="/scripts/analytics.js?v=1.17" type="module"></script>
 </head>
 
 <body>
@@ -62,17 +62,17 @@
   <main class="container">
     <section class="invitation">
       <h1 class="title">Дорогие родные, друзья и близкие!</h1>
-      <p>С радостью сообщаем, что мы женимся! Мы искренне приглашаем вас разделить с нами этот особенный и важный день. Наша свадьба состоится 14 февраля 2026 года, и для нас будет большой честью и счастьем, если вы будете рядом, чтобы разделить нашу радость и благословить наш союз.</p>
+      <p class="description">С радостью сообщаем, что мы женимся! Мы искренне приглашаем вас разделить с нами этот особенный и важный день. Наша свадьба состоится 14 февраля 2026 года, и для нас будет большой честью и счастьем, если вы будете рядом, чтобы разделить нашу радость и благословить наш союз.</p>
 
       <address>
-        <a class="location">📍 <strong>Место проведения:</strong> [Укажите место]</a>
+        <a class="location" href="https://maps.app.goo.gl/7NRCxBv8N9hUCLtK8" target="_blank">📍 <strong>Место проведения:</strong> <span class="place">Crowne Plaza Tainan by IHG</span></a>
         <a class="ceremony">💍 <strong>Церемония:</strong> 16:00</a>
         <a class="dinner">🍽 <strong>Праздничный банкет:</strong> 18:00</a>
-        <a class="condition">👔 <strong>Дресс-код:</strong> официальная одежда</a>
+        <a class="dress-code">👔 <strong>Дресс-код:</strong> официальная одежда</a>
       </address>
 
-      <p>Для лучшей организации мероприятия будем благодарны, если вы сможете подтвердить своё присутствие в ближайшее время. Если вы пока не уверены, пожалуйста, сообщите нам об этом.</p>
-      <p>Мы с нетерпением ждём встречи и возможности провести вместе этот особенный День святого Валентина! ❤️</p>
+      <p class="confirmation">Для лучшей организации мероприятия будем благодарны, если вы сможете подтвердить своё присутствие в ближайшее время. Если вы пока не уверены, пожалуйста, сообщите нам об этом.</p>
+      <p class="anticipation">Мы с нетерпением ждём встречи и возможности провести вместе этот особенный День святого Валентина! ❤️</p>
     </section>
 
     <section class="form">
@@ -110,10 +110,28 @@
       const peipei = document.querySelector(".title .peipei");
       const andrey = document.querySelector(".title .andrey");
 
+      const invitationTitle = document.querySelector(".invitation .title");
+      const invitationDescription = document.querySelector(".invitation .description");
+      const invitationLocation = document.querySelector(".invitation .location");
+      const invitationCeremony = document.querySelector(".invitation .ceremony");
+      const invitationDinner = document.querySelector(".invitation .dinner");
+      const invitationDressCode = document.querySelector(".invitation .dress-code");
+      const invitationConfirmation = document.querySelector(".invitation .confirmation");
+      const invitationAnticipation = document.querySelector(".invitation .anticipation");
+
       document.title = window.getString("titleRSVP");
       title.className = `title ${language}`;
       peipei.textContent = window.getString("peiPei");
       andrey.textContent = window.getString("andrey");
+
+      invitationTitle.textContent = window.getString("invitationTitle");
+      invitationDescription.textContent = window.getString("invitationDescription");
+      invitationLocation.innerHTML = `📍 <strong>${window.getString("invitationLocationName")}</strong> <span class="place">${window.getString("invitationLocationValue")}</span>`;
+      invitationCeremony.innerHTML = `💒 <strong>${window.getString("invitationCeremonyName")}</strong> ${window.getString("invitationCeremonyValue")}`;
+      invitationDinner.innerHTML = `🍽️ <strong>${window.getString("invitationDinnerName")}</strong> ${window.getString("invitationDinnerValue")}`;
+      invitationDressCode.innerHTML = `👔 <strong>${window.getString("invitationDressCodeName")}</strong> ${window.getString("invitationDressCodeValue")}`;
+      invitationConfirmation.textContent = window.getString("invitationConfirmation");
+      invitationAnticipation.textContent = window.getString("invitationAnticipation");
     }
 
     applyLanguage(window.language);
@@ -121,6 +139,6 @@
     window.applyLanguage = applyLanguage;
   </script>
 
-  <script src="/scripts/loader.js?v=1.16" type="module"></script>
+  <script src="/scripts/loader.js?v=1.17" type="module"></script>
 </body>
 </html>

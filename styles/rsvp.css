@@ -32,6 +32,12 @@ main {
 
       a {
         display: block;
+        color: var(--fg-primary);
+        text-decoration: none;
+
+        .place {
+          text-decoration: underline;
+        }
       }
     }
   }
