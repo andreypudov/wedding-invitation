@@ -23,21 +23,35 @@ header {
   z-index: -1;
 }
 
-.form-container {
-  display: flex;
-  height: 2000px;
-  justify-content: center;
-  width: 100%;
+main {
+  .invitation {
+    margin: 0 var(--gap-md);
 
-  overflow: scroll; 
-  scrollbar-width: none;
-  -webkit-overflow-scrolling: touch;
+    address {
+      margin-bottom: 1rem;
 
-  iframe {
-    height: 100%;
+      a {
+        display: block;
+      }
+    }
+  }
+
+  .form{
+    display: flex;
+    height: 2000px;
+    justify-content: center;
     width: 100%;
-    border: none;
-    display: block;
+
+    overflow: scroll; 
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+
+    iframe {
+      height: 100%;
+      width: 100%;
+      border: none;
+      display: block;
+    }
   }
 }
 
