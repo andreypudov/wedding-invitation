@@ -5,3 +5,5 @@ function gtag() {
 
 gtag('js', new Date());
 gtag('config', 'G-WX4P1VKTPE');
+
+window.gtag = gtag;
