@@ -1,0 +1,53 @@
+header {
+  .languages {
+    position: fixed;
+    top: var(--gap-lg);
+
+    @media (max-width: 576px) {
+      top: var(--gap-xxl);
+    }
+  }
+
+  .title {
+    .not-found {
+      text-align: center;
+
+      h1 {
+        font-size: 4vw;
+
+        @media (max-width: 576px) {
+          font-size: 8vw;
+        }
+      }
+
+      h2 {
+        font-size: 3vw;
+        margin-top: var(--gap-sm);
+
+        @media (max-width: 576px) {
+          font-size: 6vw;
+        }
+      }
+
+      nav {
+        position: relative;
+        font-family: var(--font-family);
+        margin-top: var(--gap-lg);
+        font-size: 1.6vw;
+
+        a {
+          color: var(--fg-primary);
+          text-decoration: none;
+
+          &:hover {
+            color: var(--accent);
+          }
+        }
+
+        @media (max-width: 576px) {
+          font-size: 4vw;
+        }
+      }
+    }
+  }
+}
