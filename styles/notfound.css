@@ -10,6 +10,9 @@ header {
 
   .title {
     .not-found {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       text-align: center;
 
       h1 {
@@ -31,6 +34,11 @@ header {
 
       nav {
         position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+
         font-family: var(--font-family);
         margin-top: var(--gap-lg);
         font-size: var(--font-size-primary);
