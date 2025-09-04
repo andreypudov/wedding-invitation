@@ -46,7 +46,7 @@ function getLeftTranslation(days) {
 function getDaysTranslation(days) {
   if (days % 10 === 1 && days % 100 !== 11) {
     return " день";
-  } else if (days >= 2 && days <= 4) {
+  } else if ([2, 3, 4].includes(days % 10) && ![12, 13, 14].includes(days % 100)) {
     return " дня";
   } else {
     return " дней";
