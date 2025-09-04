@@ -33,7 +33,7 @@ header {
         position: relative;
         font-family: var(--font-family);
         margin-top: var(--gap-lg);
-        font-size: 1.6vw;
+        font-size: var(--font-size-primary);
 
         a {
           color: var(--fg-primary);
