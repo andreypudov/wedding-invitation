@@ -1,3 +1,10 @@
+/**
+ * 💍 Hey there, curious coder!  
+ * You’ve officially hacked into the source code of our wedding. 
+ * Sadly, no cheat codes for free cake are hidden here.  
+ * But if you scroll deep enough, you *might* unlock eternal love. 😉
+ */
+
 const monoStyle = [
   'font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
   'white-space: pre',
