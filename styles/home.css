@@ -4,15 +4,6 @@ html, body {
 }
 
 header {
-  .languages {
-    position: fixed;
-    top: var(--gap-lg);
-
-    @media (max-width: 576px) {
-      top: var(--gap-xxl);
-    }
-  }
-
   .title {
     .names {
       font-size: 10vw;
@@ -51,16 +42,6 @@ header {
     @media (max-width: 576px) {
       bottom: var(--gap-xxl);
     }
-  }
-}
-
-.container-hero {
-  position: fixed;
-  inset: 0;
-  overflow: auto;
-
-  &.centered {
-    justify-content: center;
   }
 }
 
