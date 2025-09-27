@@ -1,7 +1,4 @@
-html, body {
-  height: 100%;
-  width: 100%;
-}
+@import url("layout-hero.css?v=1.24");
 
 main {
   .title {
@@ -87,51 +84,6 @@ main {
       @media (max-width: 576px) {
         font-size: 8vw;
       }
-    }
-  }
-}
-
-.corners {
-  position: absolute;
-  inset: 0;
-  filter: opacity(0.8);
-
-  .corner {
-    position: absolute;
-    background-image: url("../images/corner-flowers.svg");
-    background-repeat: no-repeat;
-    background-size: 100%;
-    width: 240px;
-    height: 240px;
-    filter: invert(71%) sepia(26%) saturate(584%) hue-rotate(345deg) brightness(98%) contrast(89%);
-
-    @media (max-width: 576px) {
-      width: 140px;
-      height: 140px;
-    }
-
-    &.top-left {
-      top: var(--page-border);
-      left: var(--page-border);
-      transform: rotate(90deg);
-    }
-
-    &.top-right {
-      top: var(--page-border);
-      right: var(--page-border);
-      transform: rotate(180deg)
-    }
-
-    &.bottom-left {
-      bottom: var(--page-border);
-      left: var(--page-border);
-      transform: rotate(0deg);
-    }
-
-    &.bottom-right {
-      bottom: var(--page-border);
-      right: var(--page-border);
-      transform: rotate(270deg);
     }
   }
 }

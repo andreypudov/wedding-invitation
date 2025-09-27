@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Свадьба Пейпей и Андрея">
 
-  <title>404 - Свадьба Пейпей и Андрея</title>
+  <title>Имаджинариум - Свадьба Пейпей и Андрея</title>
 
   <style>
     .loader {
@@ -25,7 +25,7 @@
   <link href="/images/logo.svg?v=1.24" rel="icon" type="image/svg+xml">
 
   <link href="/styles/layout.css?v=1.24" rel="stylesheet" />
-  <link href="/styles/notfound.css?v=1.24" rel="stylesheet" />
+  <link href="/styles/imaginarium.css?v=1.24" rel="stylesheet" />
 
   <script src="/scripts/translation.js?v=1.24" type="module"></script>
   <script src="/scripts/debug.js?v=1.24" type="module"></script>
@@ -53,19 +53,38 @@
   </header>
 
   <main class="container">
-    <div class="title">
-      <div class="not-found">
-        <h1>Похоже, вы забрели не в тот банкетный зал.</h1>
-        <h2>Давайте вернём вас на праздник!</h2>
-
-        <nav>
-          <a class="to-main" href="/">→ На главную</a>
-          <a href="https://vk.com/peipeiandandrey" target="_blank" rel="noopener" aria-label="VK">→ VK</a>
-          <a href="https://www.instagram.com/peipeiandandrey/" target="_blank" rel="noopener" aria-label="Instagram">→ Instagram</a>
-          <a href="https://www.facebook.com/peipeiandandrey" target="_blank" rel="noopener" aria-label="Facebook">→ Facebook</a>
-        </nav>
+    <form>
+      <div class="row">
+        <div class="col">
+          <label id="peipei-clothes-label" for="peipei-clothes">Одежда Пейпей"</label>
+          <input id="peipei-clothes" type="text" placeholder="Свадебное платье">
+        </div>
+        <div class="col">
+          <label id="andrey-clothes-label" for="andrey-clothes">Одежда Андрея</label>
+          <input id="andrey-clothes" type="text" placeholder="Смокинг">
+        </div>
       </div>
-    </div>
+
+      <div class="row">
+        <div class="col">
+          <label id="action-label" for="action">Чем они заняты...</label>
+          <input id="action" type="text" placeholder="Танцуют вальс">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <label id="location-label" for="location">Где они находятся...</label>
+          <textarea id="location" placeholder="В красивом саду"></textarea>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <button id="submit-button" type="submit">Покажите нам Вашу идею...</button>
+        </div>
+      </div>
+    </form>
   </main>
 
   <footer>
@@ -95,15 +114,26 @@
       window.setLanguage(language);
 
       const title = document.querySelector(".title");
-      const header = document.querySelector(".title h1");
-      const subheader = document.querySelector(".title h2");
-      const toMain = document.querySelector(".title .to-main");
+      const peipeiClothesLabel = document.getElementById("peipei-clothes-label");
+      const peipeiClothesInput = document.getElementById("peipei-clothes");
+      const andreyClothesLabel = document.getElementById("andrey-clothes-label");
+      const andreyClothesInput = document.getElementById("andrey-clothes");
+      const actionLabel = document.getElementById("action-label");
+      const actionInput = document.getElementById("action");
+      const locationLabel = document.getElementById("location-label");
+      const locationInput = document.getElementById("location");
+      const submitButton = document.getElementById("submit-button");
 
-      document.title = window.getString("title404");
-      header.textContent = window.getString("notfoundHeader");
-      subheader.textContent = window.getString("notfoundSubheader");
-      toMain.textContent = `→ ${window.getString("notFoundToMain")}`;
-      title.className = `title ${language}`;
+      document.title = window.getString("imaginariumTitle");
+      peipeiClothesLabel.textContent = window.getString("imaginariumClothesPeiPei");
+      peipeiClothesInput.placeholder = window.getString("imaginariumClothesPeiPeiPlaceholder");
+      andreyClothesLabel.textContent = window.getString("imaginariumClothesAndrey");
+      andreyClothesInput.placeholder = window.getString("imaginariumClothesAndreyPlaceholder");
+      actionLabel.textContent = window.getString("imaginariumAction");
+      actionInput.placeholder = window.getString("imaginariumActionPlaceholder");
+      locationLabel.textContent = window.getString("imaginariumLocation");
+      locationInput.placeholder = window.getString("imaginariumLocationPlaceholder");
+      submitButton.textContent = window.getString("imaginariumGenerate");
     }
 
     applyLanguage(window.language);
