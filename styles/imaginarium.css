@@ -1,0 +1,50 @@
+@import url("layout-hero.css?v=1.24");
+
+form {
+  height: 100%;
+  align-content: center;
+
+  label {
+    display: inline-block;
+    margin-bottom: var(--spacing);
+  }
+
+  input, textarea, button {
+    display: block;
+    width: 100%;
+    font-size: 1rem;
+    line-height: 1.5;
+    background-color: rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--fg-primary);
+    color: var(--fg-primary);
+    transition: all var(--transition) ease;
+
+    &:hover {
+      filter: brightness(1.2);
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 var(--spacing) rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  input, textarea {
+    padding: var(--form-padding);
+    box-sizing: border-box;
+  }
+
+  button {
+    background-color: var(--fg-primary);
+    color: var(--bg-primary);
+    padding: calc(var(--form-padding) * 2);
+    text-align: center;
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--bg-primary);
+      color: var(--fg-primary);
+      border-color: var(--fg-primary);
+    }
+  }
+}
