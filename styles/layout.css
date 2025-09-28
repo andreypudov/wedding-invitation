@@ -68,7 +68,7 @@ header {
   padding: var(--gap-lg);
 
   @media (max-width: 576px) {
-    padding: var(--gap-xxl);
+    padding: var(--gap-xxl) 0 var(--gap-lg) 0;
   }
 
   a {
@@ -159,6 +159,10 @@ footer {
     .col {
       flex: 1 0 0;
     }
+  }
+
+  section {
+    margin: 0 var(--gap-md);
   }
 }
 
