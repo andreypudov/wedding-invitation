@@ -26,7 +26,8 @@ const STRINGS = {
     imaginariumActionPlaceholder: "Танцуют вальс",
     imaginariumLocation: "Где они находятся...",
     imaginariumLocationPlaceholder: "В красивом саду",
-    imaginariumGenerate: "Покажите нам Вашу идею...",
+    imaginariumGenerate: "Покажите нам вашу идею...",
+    imaginariumWaiting: "Пожалуйста, подождите, идёт создание...",
 
     galleryTitle: "Галерея",
     galleryLoading: "Пожалуйста, подождите...",
@@ -66,6 +67,7 @@ const STRINGS = {
     imaginariumLocation: "他們在哪裡…",
     imaginariumLocationPlaceholder: "在美麗的花園裡",
     imaginariumGenerate: "展現您的創意…",
+    imaginariumWaiting: "請稍候，正在生成…",
 
     galleryTitle: "相簿",
     galleryLoading: "請稍候，讀取中...",
