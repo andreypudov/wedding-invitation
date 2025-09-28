@@ -28,6 +28,9 @@ const STRINGS = {
     imaginariumLocationPlaceholder: "В красивом саду",
     imaginariumGenerate: "Покажите нам Вашу идею...",
 
+    galleryTitle: "Галерея",
+    galleryLoading: "Пожалуйста, подождите...",
+
     notfoundHeader: "Похоже, вы забрели не в тот банкетный зал.",
     notfoundSubheader: "Давайте вернём вас на праздник!",
     notFoundToMain: "На главную",
@@ -63,6 +66,9 @@ const STRINGS = {
     imaginariumLocation: "他們在哪裡…",
     imaginariumLocationPlaceholder: "在美麗的花園裡",
     imaginariumGenerate: "展現您的創意…",
+
+    galleryTitle: "相簿",
+    galleryLoading: "請稍候，讀取中...",
 
     notfoundHeader: "看起來你走錯宴會廳了。",
     notfoundSubheader: "讓我們帶你回到派對吧！",
