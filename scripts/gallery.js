@@ -1,11 +1,8 @@
-const ACCOUNT_NAME = 'yourstorageaccount';
+const ACCOUNT_NAME = 'peipeiandandreysta';
+const IMAGINARIUM_CONTAINER_NAME = 'imaginarium';
 
-async function loadImages(containerName) {
+async function fetchImages(containerName) {
   try {
-    if (!containerName) {
-      throw new Error('Container name is required');
-    }
-
     const baseUrl = `https://${ACCOUNT_NAME}.blob.core.windows.net/${containerName}`;
     const url = `${baseUrl}?restype=container&comp=list`;
 
@@ -30,18 +27,44 @@ async function loadImages(containerName) {
     }
 
     const blobs = xmlDoc.querySelectorAll('Blob Name');
-    const fileNames = Array.from(blobs).map(blob => {
-      const name = blob.textContent;
-      return name.includes('/') ? name.split('/').pop() : name;
-    }).filter(name => name); // Remove any empty names
+    const imageUrls = Array.from(blobs).map(blob => {
+      const blobName = blob.textContent;
+      console.log(blob);
+      return `${baseUrl}/${blobName}`;
+    }).filter(url => url);
 
-    return fileNames;
+    return imageUrls;
   } catch (error) {
     return [];
   }
 }
 
-window.loadImages = loadImages;
+async function loadImaginariumImages() {
+  return await fetchImages(IMAGINARIUM_CONTAINER_NAME);
+}
 
-// Usage example:
-// const files = await loadImages('imaginarium');
+function createGallery(imageUrls) {
+  const template = `<figure>
+      <a id="imaginarium-grid-<id>" href="#lightbox-imaginarium-<id>">
+          <img src="<url>" alt="" />
+      </a>
+    </figure>`;
+  return imageUrls.map((url, index) => {
+    const figure = document.createElement('figure');
+    const link = document.createElement('a');
+    const img = document.createElement('img');
+
+    link.id = `imaginarium-grid-${index + 1}`;
+    link.href = `#lightbox-imaginarium-${index + 1}`;
+    img.src = url;
+    img.alt = '';
+
+    figure.appendChild(link);
+    link.appendChild(img);
+
+    return figure;
+  });
+}
+
+window.loadImaginariumImages = loadImaginariumImages;
+window.createGallery = createGallery;

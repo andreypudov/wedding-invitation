@@ -62,56 +62,13 @@
   </header>
 
   <main class="container">
-    <div class="loader-images">
+    <div id="loader-images" class="loader-images">
       <img src="/images/loader-imaginarium.webp" alt="Loading images..." />
       <span id="loading-text">Пожалуйста, подождите...</span>
     </div>
 
-    <div class="masonry-grid">
-      <figure>
-        <a id="travel-grid-1" href="#lightbox-travel-1">
-          <div class="lazy-image">
-            <img src="https://andreypudov.comhttps://andreypudov.com/media/thumbnails/2025-04-29/2025-04-29_001_300.webp" class="low" loading="lazy" width="200" height="300" alt="The Sagrada Família radiates an ethereal presence in infrared, where stone and sky dissolve into dreamlike contrast." />
-            <img src="https://andreypudov.com/media/photographs/2025-04-29/2025-04-29_001.webp" class="high" loading="lazy" width="1365" height="2048" alt="The Sagrada Família radiates an ethereal presence in infrared, where stone and sky dissolve into dreamlike contrast." />
-          </div>
-        </a>
-      </figure>
-
-      <figure>
-        <a id="travel-grid-2" href="#lightbox-travel-2">
-          <div class="lazy-image">
-            <img src="https://andreypudov.comhttps://andreypudov.com/media/thumbnails/2025-04-29/2025-04-29_001_300.webp" class="low" loading="lazy" width="200" height="300" alt="The Sagrada Família radiates an ethereal presence in infrared, where stone and sky dissolve into dreamlike contrast." />
-            <img src="https://andreypudov.com/media/photographs/2025-04-29/2025-04-29_001.webp" class="high" loading="lazy" width="1365" height="2048" alt="The Sagrada Família radiates an ethereal presence in infrared, where stone and sky dissolve into dreamlike contrast." />
-          </div>
-        </a>
-      </figure>
-
-      <figure>
-        <a id="travel-grid-3" href="#lightbox-travel-3">
-          <div class="lazy-image">
-            <img src="https://andreypudov.comhttps://andreypudov.com/media/thumbnails/2025-01-15_02-10/2025-01-15_02-10_039_300.webp" class="low" loading="lazy" width="200" height="300" alt="Taipei 101 rises into the night sky, crowned by the moon in a quiet moment of urban stillness." />
-            <img src="https://andreypudov.com/media/photographs/2025-01-15_02-10/2025-01-15_02-10_039.webp" class="high" loading="lazy" width="1365" height="2048" alt="Taipei 101 rises into the night sky, crowned by the moon in a quiet moment of urban stillness." />
-          </div>
-        </a>
-      </figure>
-
-      <figure>
-        <a id="travel-grid-4" href="#lightbox-travel-4">
-          <div class="lazy-image">
-            <img src="https://andreypudov.comhttps://andreypudov.com/media/thumbnails/2025-01-15_02-10/2025-01-15_02-10_037_300.webp" class="low" loading="lazy" width="200" height="300" alt="Taipei 101 rises above glowing city lights, capturing the vibrant energy of Taipei after dark." />
-            <img src="https://andreypudov.com/media/photographs/2025-01-15_02-10/2025-01-15_02-10_037.webp" class="high" loading="lazy" width="1365" height="2048" alt="Taipei 101 rises above glowing city lights, capturing the vibrant energy of Taipei after dark." />
-          </div>
-        </a>
-      </figure>
-
-      <figure>
-        <a id="travel-grid-5" href="#lightbox-travel-5">
-          <div class="lazy-image">
-            <img src="https://andreypudov.comhttps://andreypudov.com/media/thumbnails/2025-01-15_02-10/2025-01-15_02-10_037_300.webp" class="low" loading="lazy" width="200" height="300" alt="Taipei 101 rises above glowing city lights, capturing the vibrant energy of Taipei after dark." />
-            <img src="https://andreypudov.com/media/photographs/2025-01-15_02-10/2025-01-15_02-10_037.webp" class="high" loading="lazy" width="1365" height="2048" alt="Taipei 101 rises above glowing city lights, capturing the vibrant energy of Taipei after dark." />
-          </div>
-        </a>
-      </figure>
+    <div id="imaginarium-gallery" class="masonry-grid">
+      <!-- Images will be dynamically loaded here -->
     </div>
   </main>
 
@@ -154,6 +111,22 @@
 
       galleryLoading.textContent = window.getString("galleryLoading");
     }
+
+    window.loadImaginariumImages().then(files => {
+      const loader = document.getElementById('loader-images');
+      const gallery = document.getElementById('imaginarium-gallery');
+      const figures = window.createGallery(files);
+
+      loader.style.display = 'none';
+      gallery.style.display = 'block';
+      gallery.innerHTML = '';
+
+      figures.forEach(figure => gallery.appendChild(figure));
+    }).catch(error => {
+      const loader = document.getElementById('loader-images');
+      loader.style.display = 'none';
+      console.error('Error loading images:', error);
+    });
 
     applyLanguage(window.language);
 
