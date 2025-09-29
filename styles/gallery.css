@@ -31,6 +31,7 @@
 
 .masonry-grid {
   display: none;
+  margin: 0 var(--gap-md);
 
   column-count: 5;
   column-gap: var(--gap-md);
