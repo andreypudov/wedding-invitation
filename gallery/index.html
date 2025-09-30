@@ -22,17 +22,17 @@
     }
   </style>
 
-  <link href="/images/logo.svg?v=1.25" rel="icon" type="image/svg+xml">
+  <link href="/images/logo.svg?v=1.26" rel="icon" type="image/svg+xml">
 
-  <link href="/styles/layout.css?v=1.25" rel="stylesheet" />
-  <link href="/styles/gallery.css?v=1.25" rel="stylesheet" />
+  <link href="/styles/layout.css?v=1.26" rel="stylesheet" />
+  <link href="/styles/gallery.css?v=1.26" rel="stylesheet" />
 
-  <script src="/scripts/translation.js?v=1.25" type="module"></script>
-  <script src="/scripts/gallery.js?v=1.25" type="module"></script>
-  <script src="/scripts/debug.js?v=1.25" type="module"></script>
+  <script src="/scripts/translation.js?v=1.26" type="module"></script>
+  <script src="/scripts/gallery.js?v=1.26" type="module"></script>
+  <script src="/scripts/debug.js?v=1.26" type="module"></script>
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-WX4P1VKTPE"></script>
-  <script src="/scripts/analytics.js?v=1.25" type="module"></script>
+  <script src="/scripts/analytics.js?v=1.26" type="module"></script>
 </head>
 
 <body>
@@ -94,6 +94,10 @@
     </a>
   </footer>
 
+  <div id="lightbox-imaginarium" class="lightbox imaginarium">
+    <!-- Lightbox content will be dynamically generated -->
+  </div>
+
   <script type="module">
     function applyLanguage(language) {
       window.setLanguage(language);
@@ -115,13 +119,19 @@
     window.loadImaginariumImages().then(files => {
       const loader = document.getElementById('loader-images');
       const gallery = document.getElementById('imaginarium-gallery');
+      const lightbox = document.getElementById('lightbox-imaginarium');
+
       const figures = window.createGallery(files);
+      const lightboxes = window.createLightbox(files);
 
       loader.style.display = 'none';
       gallery.style.display = 'block';
+      lightbox.style.display = 'block';
       gallery.innerHTML = '';
+      lightbox.innerHTML = '';
 
       figures.forEach(figure => gallery.appendChild(figure));
+      lightboxes.forEach(box => lightbox.appendChild(box));
     }).catch(error => {
       const loader = document.getElementById('loader-images');
       loader.style.display = 'none';
@@ -133,6 +143,6 @@
     window.applyLanguage = applyLanguage;
   </script>
 
-  <script src="/scripts/loader.js?v=1.25" type="module"></script>
+  <script src="/scripts/loader.js?v=1.26" type="module"></script>
 </body>
 </html>
