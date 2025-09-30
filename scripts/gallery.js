@@ -44,11 +44,6 @@ async function loadImaginariumImages() {
 }
 
 function createGallery(imageUrls) {
-  const template = `<figure>
-      <a id="imaginarium-grid-<id>" href="#lightbox-imaginarium-<id>">
-          <img src="<url>" alt="" />
-      </a>
-    </figure>`;
   return imageUrls.map((url, index) => {
     const figure = document.createElement('figure');
     const link = document.createElement('a');
@@ -58,6 +53,7 @@ function createGallery(imageUrls) {
     link.href = `#lightbox-imaginarium-${index + 1}`;
     img.src = url;
     img.alt = '';
+    img.loading = 'lazy';
 
     figure.appendChild(link);
     link.appendChild(img);
@@ -66,5 +62,78 @@ function createGallery(imageUrls) {
   });
 }
 
+function createLightbox(imageUrls) {
+  const total = imageUrls.length;
+  return imageUrls.map((url, i) => {
+    const index = i + 1;
+    const prevIndex = index === 1 ? total : index - 1;
+    const nextIndex = index === total ? 1 : index + 1;
+
+    const entry = document.createElement('div');
+    entry.className = 'lightbox-entry';
+    entry.id = `lightbox-imaginarium-${index}`;
+
+    const header = document.createElement('div');
+    header.className = 'header';
+
+    const counter = document.createElement('span');
+    counter.className = 'counter';
+    counter.textContent = `${index} / ${total}`;
+
+    const close = document.createElement('a');
+    close.href = `#imaginarium-grid-${index}`;
+    close.className = 'close';
+    close.innerHTML = '&times;';
+
+    header.appendChild(counter);
+    header.appendChild(close);
+
+    const content = document.createElement('div');
+    content.className = 'content';
+
+    const prev = document.createElement('a');
+    prev.href = `#lightbox-imaginarium-${prevIndex}`;
+    prev.className = 'nav prev';
+    prev.innerHTML = '&#10094;';
+
+    const figure = document.createElement('figure');
+
+    const imageWrapper = document.createElement('div');
+    imageWrapper.className = 'image-wrapper';
+
+    const img = document.createElement('img');
+    img.src = url;
+    img.alt = 'Image description.';
+    img.loading = 'lazy';
+
+    imageWrapper.appendChild(img);
+
+    const figcaption = document.createElement('figcaption');
+    figcaption.appendChild(document.createTextNode('Some caption here - will be defined later'));
+    const small = document.createElement('small');
+    small.textContent = 'Image description.';
+    figcaption.appendChild(document.createTextNode(' '));
+    figcaption.appendChild(small);
+
+    figure.appendChild(imageWrapper);
+    figure.appendChild(figcaption);
+
+    const next = document.createElement('a');
+    next.href = `#lightbox-imaginarium-${nextIndex}`;
+    next.className = 'nav next';
+    next.innerHTML = '&#10095;';
+
+    content.appendChild(prev);
+    content.appendChild(figure);
+    content.appendChild(next);
+
+    entry.appendChild(header);
+    entry.appendChild(content);
+
+    return entry;
+  });
+}
+
 window.loadImaginariumImages = loadImaginariumImages;
 window.createGallery = createGallery;
+window.createLightbox = createLightbox;
