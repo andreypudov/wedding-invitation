@@ -29,7 +29,6 @@ async function fetchImages(containerName) {
     const blobs = xmlDoc.querySelectorAll('Blob Name');
     const imageUrls = Array.from(blobs).map(blob => {
       const blobName = blob.textContent;
-      console.log(blob);
       return `${baseUrl}/${blobName}`;
     }).filter(url => url);
 
