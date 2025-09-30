@@ -101,12 +101,16 @@ function createLightbox(imageUrls) {
     const imageWrapper = document.createElement('div');
     imageWrapper.className = 'image-wrapper';
 
+    const imageBorder = document.createElement('div');
+    imageBorder.className = 'image-border';
+
     const img = document.createElement('img');
     img.src = url;
     img.alt = 'Image description.';
     img.loading = 'lazy';
 
-    imageWrapper.appendChild(img);
+    imageBorder.appendChild(img);
+    imageWrapper.appendChild(imageBorder);
 
     const figcaption = document.createElement('figcaption');
     figcaption.appendChild(document.createTextNode('Some caption here - will be defined later'));
