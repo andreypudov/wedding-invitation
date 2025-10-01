@@ -127,16 +127,12 @@ async function createLightbox(imageUrls, metadataUrls) {
     const imageWrapper = document.createElement('div');
     imageWrapper.className = 'image-wrapper';
 
-    const imageBorder = document.createElement('div');
-    imageBorder.className = 'image-border';
-
     const img = document.createElement('img');
     img.src = url;
     img.alt = captionJson.russian || '';
     img.loading = 'lazy';
 
-    imageBorder.appendChild(img);
-    imageWrapper.appendChild(imageBorder);
+    imageWrapper.appendChild(img);
 
     const figcaption = document.createElement('figcaption');
     const russian = document.createElement('div');
