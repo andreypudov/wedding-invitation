@@ -101,9 +101,7 @@ function getBrowserLanguage() {
   return navigator.language || navigator.userLanguage;
 }
 
-function getSupportedLanguages() {
-  const browserLanguage = getBrowserLanguage();
-
+function getSupportedLanguages(browserLanguage) {
   if (browserLanguage.startsWith("zh")) {
     return "mandarin";
   } else {
@@ -119,7 +117,7 @@ function setLanguage(language) {
 function getLanguage() {
   const language = localStorage.getItem("language");
 
-  if (!language) {
+  if (!language || !["russian", "mandarin"].includes(language)) {
     const browserLanguage = getBrowserLanguage();
     const supportedLanguage = getSupportedLanguages(browserLanguage);
     setLanguage(supportedLanguage);
