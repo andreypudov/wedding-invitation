@@ -73,7 +73,7 @@ function handleSubmit(event) {
     location.value,
     action.value
   ).then(result => {
-    if (result.status === 'success') {
+    if (result.status === 'approved') {
       displayAccepted();
     } else {
       displayRejected(result.reason || '');
