@@ -22,17 +22,17 @@
     }
   </style>
 
-  <link href="/images/logo.svg?v=1.33" rel="icon" type="image/svg+xml">
+  <link href="/images/logo.svg?v=1.34" rel="icon" type="image/svg+xml">
 
-  <link href="/styles/layout.css?v=1.33" rel="stylesheet" />
-  <link href="/styles/gallery.css?v=1.33" rel="stylesheet" />
+  <link href="/styles/layout.css?v=1.34" rel="stylesheet" />
+  <link href="/styles/gallery.css?v=1.34" rel="stylesheet" />
 
-  <script src="/scripts/translation.js?v=1.33" type="module"></script>
-  <script src="/scripts/gallery.js?v=1.33" type="module"></script>
-  <script src="/scripts/debug.js?v=1.33" type="module"></script>
+  <script src="/scripts/translation.js?v=1.34" type="module"></script>
+  <script src="/scripts/gallery.js?v=1.34" type="module"></script>
+  <script src="/scripts/debug.js?v=1.34" type="module"></script>
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-WX4P1VKTPE"></script>
-  <script src="/scripts/analytics.js?v=1.33" type="module"></script>
+  <script src="/scripts/analytics.js?v=1.34" type="module"></script>
 </head>
 
 <body>
@@ -109,7 +109,7 @@
 
       const galleryLoading = document.getElementById("loading-text");
 
-      document.title = window.getString("titleRSVP");
+      document.title = window.getString("titleGallery");
       title.className = `title ${language}`;
       peipei.textContent = window.getString("peiPei");
       andrey.textContent = window.getString("andrey");
@@ -119,7 +119,7 @@
       galleryLoading.textContent = window.getString("galleryLoading");
     }
 
-  window.loadImaginariumFiles().then(async (files) => {
+    window.loadImaginariumFiles().then(async (files) => {
       const loader = document.getElementById('loader-images');
       const gallery = document.getElementById('imaginarium-gallery');
       const lightbox = document.getElementById('lightbox-imaginarium');
@@ -151,11 +151,11 @@
       console.error('Error loading images:', error);
     });
 
-    applyLanguage(window.language);
+    applyLanguage(window.language); 
 
     window.applyLanguage = applyLanguage;
   </script>
 
-  <script src="/scripts/loader.js?v=1.33" type="module"></script>
+  <script src="/scripts/loader.js?v=1.34" type="module"></script>
 </body>
 </html>
