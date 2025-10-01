@@ -48,7 +48,7 @@
   <header>
     <div class="languages">
       <a class="language" href="javascript:void(0)" onclick="window.applyLanguage('russian')">Русский</a>
-      <a class="language" href="javascript:void(0)" onclick="window.applyLanguage('chinese')">中文</a>
+      <a class="language" href="javascript:void(0)" onclick="window.applyLanguage('mandarin')">中文</a>
     </div>
   </header>
 
@@ -59,7 +59,7 @@
         <h2>Давайте вернём вас на праздник!</h2>
 
         <nav>
-          <a class="to-main" href="/">→ На главную</a>
+          <a href="/" id="to-main">→ На главную</a>
           <a href="https://vk.com/peipeiandandrey" target="_blank" rel="noopener" aria-label="VK">→ VK</a>
           <a href="https://www.instagram.com/peipeiandandrey/" target="_blank" rel="noopener" aria-label="Instagram">→ Instagram</a>
           <a href="https://www.facebook.com/peipeiandandrey" target="_blank" rel="noopener" aria-label="Facebook">→ Facebook</a>
@@ -97,7 +97,7 @@
       const title = document.querySelector(".title");
       const header = document.querySelector(".title h1");
       const subheader = document.querySelector(".title h2");
-      const toMain = document.querySelector(".title .to-main");
+      const toMain = document.getElementById("to-main");
 
       document.title = window.getString("title404");
       header.textContent = window.getString("notfoundHeader");
