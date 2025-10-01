@@ -134,8 +134,6 @@
       const images = files.filter(file => file.endsWith('.webp') || file.endsWith('.jpg') || file.endsWith('.jpeg') || file.endsWith('.png'));
       const metadata = files.filter(file => file.endsWith('.json'));
 
-      console.log(`Found ${images.length} image files and ${metadata.length} metadata files.`, { images, metadata });
-
       const figures = window.createGallery(images);
       const lightboxes = await window.createLightbox(images, metadata);
 
