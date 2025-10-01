@@ -1,6 +1,10 @@
-@import url("layout-hero.css?v=1.35");
+@import url("layout-hero.css?v=1.36");
 
 main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   .title {
     display: flex;
     flex-direction: column;
