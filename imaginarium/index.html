@@ -100,9 +100,9 @@
       <p>Пожалуйста, подождите, это может занять несколько минут. Изображение появится на странице галлереи, когда оно будет готово.</p>
 
       <nav>
-        <a href="/gallery/" id="to-gallery">→ Перейти в галерею</a>
-        <a href="/imaginarium/" id="to-imaginarium">→ Создать еще одно изображение</a>
-        <a href="/" id="to-home">→ На главную</a>
+        <a href="/gallery/" class="to-gallery">→ Перейти в галерею</a>
+        <a href="/imaginarium/" class="to-imaginarium">→ Создать еще одно изображение</a>
+        <a href="/" class="to-home">→ На главную</a>
       </nav>
     </section>
 
@@ -112,9 +112,9 @@
       <p id="rejection-reason"></p>
 
       <nav>
-        <a href="/gallery/" id="to-gallery">→ Перейти в галерею</a>
-        <a href="/imaginarium/" id="to-imaginarium">→ Создать еще одно изображение</a>
-        <a href="/" id="to-home">→ На главную</a>
+        <a href="/gallery/" class="to-gallery">→ Перейти в галерею</a>
+        <a href="/imaginarium/" class="to-imaginarium">→ Создать еще одно изображение</a>
+        <a href="/" class="to-home">→ На главную</a>
       </nav>
     </section>
   </main>
@@ -156,6 +156,18 @@
       const locationInput = document.getElementById("location");
       const submitButton = document.getElementById("submit-button");
 
+      const acceptedTitle = document.querySelector("#accepted h1");
+      const acceptedText = document.querySelector("#accepted p");
+      const acceptedToGallery = document.querySelector("#accepted .to-gallery");
+      const acceptedToImaginarium = document.querySelector("#accepted .to-imaginarium");
+      const acceptedToHome = document.querySelector("#accepted .to-home");
+
+      const rejectedTitle = document.querySelector("#rejected h1");
+      const rejectedText = document.querySelector("#rejected p");
+      const rejectedToGallery = document.querySelector("#rejected .to-gallery");
+      const rejectedToImaginarium = document.querySelector("#rejected .to-imaginarium");
+      const rejectedToHome = document.querySelector("#rejected .to-home");
+
       document.title = window.getString("imaginariumTitle");
       peipeiClothesLabel.textContent = window.getString("imaginariumClothesPeiPei");
       peipeiClothesInput.placeholder = window.getString("imaginariumClothesPeiPeiPlaceholder");
@@ -166,6 +178,18 @@
       locationLabel.textContent = window.getString("imaginariumLocation");
       locationInput.placeholder = window.getString("imaginariumLocationPlaceholder");
       submitButton.textContent = window.getString("imaginariumGenerate");
+
+      acceptedTitle.textContent = window.getString("imaginariumAcceptedTitle");
+      acceptedText.textContent = window.getString("imaginariumAcceptedDescription");
+      acceptedToGallery.textContent = `→ ${window.getString("toGallery")}`;
+      acceptedToImaginarium.textContent = `→ ${window.getString("toImaginarium")}`;
+      acceptedToHome.textContent = `→ ${window.getString("toHome")}`;
+
+      rejectedTitle.textContent = window.getString("imaginariumRejectedTitle");
+      rejectedText.textContent = window.getString("imaginariumRejectedDescription");
+      rejectedToGallery.textContent = `→ ${window.getString("toGallery")}`;
+      rejectedToImaginarium.textContent = `→ ${window.getString("toImaginarium")}`;
+      rejectedToHome.textContent = `→ ${window.getString("toHome")}`;
     }
 
     applyLanguage(window.language);

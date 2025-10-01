@@ -23,7 +23,6 @@ async function generateCouplePhoto(bride_clothes, groom_clothes, location, actio
     const result = await response.json();
     return result;
   } catch (error) {
-    console.error("Error calling Azure Function:", error);
     return { status: "error", message: error.message };
   }
 }
@@ -79,12 +78,8 @@ function handleSubmit(event) {
     } else {
       displayRejected(result.reason || '');
     }
-
-    console.log('Azure Function result:', result);
   }).catch(error => {
     displayRejected('');
-
-    console.error('Error processing request:', error);
   });
 
   return false;

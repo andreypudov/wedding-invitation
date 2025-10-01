@@ -77,10 +77,10 @@ const STRINGS = {
     imaginariumGenerate: "展現您的創意…",
     imaginariumWaiting: "請稍候，正在生成…",
 
-    imaginariumAcceptedTitle: "我們正在生成圖像...",
-    imaginariumAcceptedDescription: "請稍候，這可能需要幾分鐘。圖像完成後會顯示在圖庫頁面中。",
+    imaginariumAcceptedTitle: "我們正在生成圖片...",
+    imaginariumAcceptedDescription: "請稍候，這可能需要幾分鐘。圖片完成後會顯示在相簿中。",
     imaginariumRejectedTitle: "您的請求未被接受",
-    imaginariumRejectedDescription: "可能是因為您使用了不支援的詞語或片語。請嘗試使用其他詞語重新提交。",
+    imaginariumRejectedDescription: "可能是因為您使用了不適當的詞語或片語。請嘗試使用其他詞語重新生成。",
 
     galleryTitle: "相簿",
     galleryLoading: "請稍候，讀取中...",
@@ -89,8 +89,8 @@ const STRINGS = {
     notfoundSubheader: "讓我們帶你回到派對吧！",
 
     toHome: "回到首頁",
-    toGallery: "前往圖庫",
-    toImaginarium: "再創建一張圖像",
+    toGallery: "前往相簿",
+    toImaginarium: "再生成一張圖片",
 
     peiPei: "珮珮",
     andrey: "安德烈",

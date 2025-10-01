@@ -34,7 +34,7 @@ section {
       text-align: left;
 
       font-family: var(--font-family);
-      margin-top: var(--gap-lg);
+      margin-top: var(--gap-sm);
       font-size: var(--font-size-primary);
 
       a {
