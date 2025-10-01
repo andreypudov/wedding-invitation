@@ -124,6 +124,10 @@
       const gallery = document.getElementById('imaginarium-gallery');
       const lightbox = document.getElementById('lightbox-imaginarium');
 
+      if (files.length === 0) {
+        return;
+      }
+
       /* reverse date hieararchy to show the latest images first */
       files.reverse();
 
