@@ -49,7 +49,7 @@
   <header>
     <div class="languages">
       <a class="language" href="javascript:void(0)" onclick="window.applyLanguage('russian')">Русский</a>
-      <a class="language" href="javascript:void(0)" onclick="window.applyLanguage('chinese')">中文</a>
+      <a class="language" href="javascript:void(0)" onclick="window.applyLanguage('mandarin')">中文</a>
     </div>
 
     <div class="title">
@@ -94,7 +94,7 @@
     </a>
   </footer>
 
-  <div id="lightbox-imaginarium" class="lightbox imaginarium">
+  <div id="lightbox-imaginarium" class="lightbox imaginarium russian">
     <!-- Lightbox content will be dynamically generated -->
   </div>
 
@@ -105,6 +105,7 @@
       const title = document.querySelector(".title");
       const peipei = document.querySelector(".title .peipei");
       const andrey = document.querySelector(".title .andrey");
+      const lightbox = document.querySelector(".lightbox");
 
       const galleryLoading = document.getElementById("loading-text");
 
@@ -113,10 +114,12 @@
       peipei.textContent = window.getString("peiPei");
       andrey.textContent = window.getString("andrey");
 
+      lightbox.className = `lightbox imaginarium ${language}`;
+
       galleryLoading.textContent = window.getString("galleryLoading");
     }
 
-    window.loadImaginariumImages().then(files => {
+  window.loadImaginariumFiles().then(async (files) => {
       const loader = document.getElementById('loader-images');
       const gallery = document.getElementById('imaginarium-gallery');
       const lightbox = document.getElementById('lightbox-imaginarium');
@@ -124,14 +127,17 @@
       /* reverse date hieararchy to show the latest images first */
       files.reverse();
 
-      const figures = window.createGallery(files);
-      const lightboxes = window.createLightbox(files);
+      const images = files.filter(file => file.endsWith('.webp') || file.endsWith('.jpg') || file.endsWith('.jpeg') || file.endsWith('.png'));
+      const metadata = files.filter(file => file.endsWith('.json'));
+
+      console.log(`Found ${images.length} image files and ${metadata.length} metadata files.`, { images, metadata });
+
+      const figures = window.createGallery(images);
+      const lightboxes = await window.createLightbox(images, metadata);
 
       loader.style.display = 'none';
       gallery.style.display = 'block';
-      lightbox.style.display = 'block';
       gallery.innerHTML = '';
-      lightbox.innerHTML = '';
 
       figures.forEach(figure => gallery.appendChild(figure));
       lightboxes.forEach(box => lightbox.appendChild(box));

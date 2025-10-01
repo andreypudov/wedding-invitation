@@ -39,7 +39,7 @@ const STRINGS = {
     peiPei: "Пейпей",
     andrey: "Андрей",
   },
-  chinese: {
+  mandarin: {
     titleHome: "珮珮和安德烈的婚禮",
     titleRSVP: "出席調查 - 珮珮和安德烈的婚禮",
     title404: "404 - 珮珮和安德烈的婚禮",
@@ -89,7 +89,7 @@ function getSupportedLanguages() {
   const browserLanguage = getBrowserLanguage();
 
   if (browserLanguage.startsWith("zh")) {
-    return "chinese";
+    return "mandarin";
   } else {
     return "russian";
   }

@@ -1,6 +1,6 @@
 const weddingDate = "2026-02-14";
 
-function arabicToChinese(num) {
+function arabicToMandarin(num) {
   const digits = '零一二三四五六七八九';
   const units = ['', '十', '百', '千', '万', '十万', '百万', '千万', '亿'];
 
@@ -57,8 +57,8 @@ function updateCountdown(language) {
   const daysLeft = daysUntil(weddingDate);
   const countdown = document.getElementsByClassName("countdown")[0];
 
-  if (language === "chinese") {
-    countdown.innerText = "倒數" + arabicToChinese(daysLeft) + "天";
+  if (language === "mandarin") {
+    countdown.innerText = "倒數" + arabicToMandarin(daysLeft) + "天";
   } else {
     countdown.innerText = "До свадьбы " + getLeftTranslation(daysLeft) + daysLeft + getDaysTranslation(daysLeft);
   }

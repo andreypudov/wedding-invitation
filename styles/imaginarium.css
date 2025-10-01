@@ -1,5 +1,57 @@
 @import url("layout-hero.css?v=1.28");
 
+section {
+  margin: 0;
+
+  &.accepted, &.rejected {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+
+    display: none;
+
+    h1 {
+      font-size: 4vw;
+      margin-bottom: var(--gap-sm);
+
+      @media (max-width: 576px) {
+        font-size: 8vw;
+      }
+    }
+
+    p {
+      font-family: var(--font-family);
+    }
+
+    nav {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+
+      font-family: var(--font-family);
+      margin-top: var(--gap-lg);
+      font-size: var(--font-size-primary);
+
+      a {
+        color: var(--fg-primary);
+        text-decoration: none;
+
+        &:hover {
+          color: var(--accent);
+        }
+      }
+
+      @media (max-width: 576px) {
+        font-size: 4vw;
+      }
+    }
+  }
+}
+
 form {
   height: 100%;
   align-content: center;

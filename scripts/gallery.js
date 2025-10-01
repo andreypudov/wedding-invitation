@@ -1,7 +1,8 @@
 const ACCOUNT_NAME = 'peipeiandandreysta';
 const IMAGINARIUM_CONTAINER_NAME = 'imaginarium';
+const EMPTY_METADATA_JSON = '{russian: "", mandarin: ""}';
 
-async function fetchImages(containerName) {
+async function fetchFiles(containerName) {
   try {
     const baseUrl = `https://${ACCOUNT_NAME}.blob.core.windows.net/${containerName}`;
     const url = `${baseUrl}?restype=container&comp=list`;
@@ -38,8 +39,8 @@ async function fetchImages(containerName) {
   }
 }
 
-async function loadImaginariumImages() {
-  return await fetchImages(IMAGINARIUM_CONTAINER_NAME);
+async function loadImaginariumFiles() {
+  return await fetchFiles(IMAGINARIUM_CONTAINER_NAME);
 }
 
 function createGallery(imageUrls) {
@@ -61,9 +62,28 @@ function createGallery(imageUrls) {
   });
 }
 
-function createLightbox(imageUrls) {
+async function getCaptionFromMetadata(metadataUrls, imageUrl) {
+  const imageName = imageUrl.substring(imageUrl.lastIndexOf('/') + 1, imageUrl.lastIndexOf('.'));
+  const metadataUrl = metadataUrls.find(url => url.includes(imageName) && url.endsWith('.json'));
+
+  if (!metadataUrl) return EMPTY_METADATA_JSON;
+
+  try {
+    const response = await fetch(metadataUrl);
+    if (!response.ok) {
+      return EMPTY_METADATA_JSON;
+    }
+
+    return await response.json();
+  } catch (_) {
+    return EMPTY_METADATA_JSON;
+  }
+}
+
+async function createLightbox(imageUrls, metadataUrls) {
   const total = imageUrls.length;
-  return imageUrls.map((url, i) => {
+
+  const entries = await Promise.all(imageUrls.map(async (url, i) => {
     const index = i + 1;
     const prevIndex = index === 1 ? total : index - 1;
     const nextIndex = index === total ? 1 : index + 1;
@@ -97,6 +117,13 @@ function createLightbox(imageUrls) {
 
     const figure = document.createElement('figure');
 
+    let captionJson = EMPTY_METADATA_JSON;
+    try {
+      captionJson = await getCaptionFromMetadata(metadataUrls, url);
+    } catch (_) {
+      captionJson = EMPTY_METADATA_JSON;
+    }
+
     const imageWrapper = document.createElement('div');
     imageWrapper.className = 'image-wrapper';
 
@@ -105,18 +132,23 @@ function createLightbox(imageUrls) {
 
     const img = document.createElement('img');
     img.src = url;
-    img.alt = 'Image description.';
+    img.alt = captionJson.russian || '';
     img.loading = 'lazy';
 
     imageBorder.appendChild(img);
     imageWrapper.appendChild(imageBorder);
 
     const figcaption = document.createElement('figcaption');
-    figcaption.appendChild(document.createTextNode('Some caption here - will be defined later'));
-    const small = document.createElement('small');
-    small.textContent = 'Image description.';
-    figcaption.appendChild(document.createTextNode(' '));
-    figcaption.appendChild(small);
+    const russian = document.createElement('div');
+    const mandarin = document.createElement('div');
+
+    russian.className = 'russian';
+    russian.textContent = truncateWithDots(captionJson.russian || '');
+    mandarin.className = 'mandarin';
+    mandarin.textContent = truncateWithDots(captionJson.mandarin || '');
+
+    figcaption.appendChild(russian);
+    figcaption.appendChild(mandarin);
 
     figure.appendChild(imageWrapper);
     figure.appendChild(figcaption);
@@ -134,9 +166,17 @@ function createLightbox(imageUrls) {
     entry.appendChild(content);
 
     return entry;
-  });
+  }));
+
+  return entries;
 }
 
-window.loadImaginariumImages = loadImaginariumImages;
+function truncateWithDots(str, maxLength = 128) {
+  return str.length > maxLength 
+    ? str.slice(0, maxLength - 3) + "..." 
+    : str;
+}
+
+window.loadImaginariumFiles = loadImaginariumFiles;
 window.createGallery = createGallery;
 window.createLightbox = createLightbox;
