@@ -29,12 +29,20 @@ const STRINGS = {
     imaginariumGenerate: "Покажите нам вашу идею...",
     imaginariumWaiting: "Пожалуйста, подождите, идёт создание...",
 
+    imaginariumAcceptedTitle: "Мы создаем изображение...",
+    imaginariumAcceptedDescription: "Пожалуйста, подождите, это может занять несколько минут. Изображение появится на странице галлереи, когда оно будет готово.",
+    imaginariumRejectedTitle: "Ваш запрос не принят",
+    imaginariumRejectedDescription: "Возможно, вы использовали неподдерживаемые слова или фразы. Пожалуйста, попробуйте снова с другими словами.",
+
     galleryTitle: "Галерея",
     galleryLoading: "Пожалуйста, подождите...",
 
     notfoundHeader: "Похоже, вы забрели не в тот банкетный зал.",
     notfoundSubheader: "Давайте вернём вас на праздник!",
-    notFoundToMain: "На главную",
+
+    toHome: "На главную",
+    toGallery: "Перейти в галерею",
+    toImaginarium: "Создать еще одно изображение",
 
     peiPei: "Пейпей",
     andrey: "Андрей",
@@ -69,12 +77,20 @@ const STRINGS = {
     imaginariumGenerate: "展現您的創意…",
     imaginariumWaiting: "請稍候，正在生成…",
 
+    imaginariumAcceptedTitle: "我們正在生成圖像...",
+    imaginariumAcceptedDescription: "請稍候，這可能需要幾分鐘。圖像完成後會顯示在圖庫頁面中。",
+    imaginariumRejectedTitle: "您的請求未被接受",
+    imaginariumRejectedDescription: "可能是因為您使用了不支援的詞語或片語。請嘗試使用其他詞語重新提交。",
+
     galleryTitle: "相簿",
     galleryLoading: "請稍候，讀取中...",
 
     notfoundHeader: "看起來你走錯宴會廳了。",
     notfoundSubheader: "讓我們帶你回到派對吧！",
-    notFoundToMain: "回到首頁",
+
+    toHome: "回到首頁",
+    toGallery: "前往圖庫",
+    toImaginarium: "再創建一張圖像",
 
     peiPei: "珮珮",
     andrey: "安德烈",

@@ -1,4 +1,4 @@
-@import url("layout-hero.css?v=1.29");
+@import url("layout-hero.css?v=1.30");
 
 section {
   margin: 0;
@@ -23,6 +23,7 @@ section {
 
     p {
       font-family: var(--font-family);
+      margin-bottom: var(--gap-sm);
     }
 
     nav {
@@ -130,7 +131,7 @@ form {
     text-align: center;
     cursor: pointer;
 
-    &:hover {
+    &:hover, &:disabled {
       background-color: var(--bg-primary);
       color: var(--fg-primary);
       border-color: var(--fg-primary);
