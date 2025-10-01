@@ -1,7 +1,7 @@
 const FUNCTION_APP = "imaginarium-peipeiandandrey";
 const FUNCTION_NAME = "prompt_validation";
 
-async function generateCouplePhoto(bride_clothes, groom_clothes, location, action) {
+async function generateCouplePhoto({ bride_clothes, groom_clothes, location, action }) {
   try {
     const response = await fetch(`https://${FUNCTION_APP}.azurewebsites.net/api/${FUNCTION_NAME}`, {
       method: "POST",
@@ -67,23 +67,42 @@ function handleSubmit(event) {
 
   button.textContent = window.getString('imaginariumWaiting');
 
-  generateCouplePhoto(
-   peipeiClothes.value,
-    andreyClothes.value,
-    location.value,
-    action.value
-  ).then(result => {
+  const request = {
+    bride_clothes: peipeiClothes.value,
+    groom_clothes: andreyClothes.value,
+    action: action.value,
+    location: location.value
+  }
+
+  logRequest(request);
+
+  generateCouplePhoto(request).then(result => {
     if (result.status === 'approved') {
       displayAccepted();
     } else {
       displayRejected(result.reason || '');
     }
   }).catch(error => {
+    console.error('Error:', error);
     displayRejected('');
   });
 
   return false;
 }
 
+function logRequest(requestData) {
+  const maxEntries = 100;
+
+  const logs = JSON.parse(localStorage.getItem("imaginarium-logs") || "[]");
+
+  logs.push({
+    timestamp: new Date().toISOString(),
+    ...requestData
+  });
+
+  const trimmedLogs = logs.slice(-maxEntries);
+
+  localStorage.setItem("imaginarium-logs", JSON.stringify(trimmedLogs));
+}
 
 window.handleSubmit = handleSubmit;
