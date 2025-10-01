@@ -22,16 +22,16 @@
     }
   </style>
 
-  <link href="/images/logo.svg?v=1.29" rel="icon" type="image/svg+xml">
+  <link href="/images/logo.svg?v=1.30" rel="icon" type="image/svg+xml">
 
-  <link href="/styles/layout.css?v=1.29" rel="stylesheet" />
-  <link href="/styles/notfound.css?v=1.29" rel="stylesheet" />
+  <link href="/styles/layout.css?v=1.30" rel="stylesheet" />
+  <link href="/styles/notfound.css?v=1.30" rel="stylesheet" />
 
-  <script src="/scripts/translation.js?v=1.29" type="module"></script>
-  <script src="/scripts/debug.js?v=1.29" type="module"></script>
+  <script src="/scripts/translation.js?v=1.30" type="module"></script>
+  <script src="/scripts/debug.js?v=1.30" type="module"></script>
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-WX4P1VKTPE"></script>
-  <script src="/scripts/analytics.js?v=1.29" type="module"></script>
+  <script src="/scripts/analytics.js?v=1.30" type="module"></script>
 </head>
 
 <body>
@@ -59,7 +59,7 @@
         <h2>Давайте вернём вас на праздник!</h2>
 
         <nav>
-          <a href="/" id="to-main">→ На главную</a>
+          <a href="/" id="to-home">→ На главную</a>
           <a href="https://vk.com/peipeiandandrey" target="_blank" rel="noopener" aria-label="VK">→ VK</a>
           <a href="https://www.instagram.com/peipeiandandrey/" target="_blank" rel="noopener" aria-label="Instagram">→ Instagram</a>
           <a href="https://www.facebook.com/peipeiandandrey" target="_blank" rel="noopener" aria-label="Facebook">→ Facebook</a>
@@ -97,12 +97,12 @@
       const title = document.querySelector(".title");
       const header = document.querySelector(".title h1");
       const subheader = document.querySelector(".title h2");
-      const toMain = document.getElementById("to-main");
+      const toHome = document.getElementById("to-home");
 
       document.title = window.getString("title404");
       header.textContent = window.getString("notfoundHeader");
       subheader.textContent = window.getString("notfoundSubheader");
-      toMain.textContent = `→ ${window.getString("notFoundToMain")}`;
+      toHome.textContent = `→ ${window.getString("toHome")}`;
       title.className = `title ${language}`;
     }
 
@@ -111,6 +111,6 @@
     window.applyLanguage = applyLanguage;
   </script>
 
-  <script src="/scripts/loader.js?v=1.29" type="module"></script>
+  <script src="/scripts/loader.js?v=1.30" type="module"></script>
 </body>
 </html>
