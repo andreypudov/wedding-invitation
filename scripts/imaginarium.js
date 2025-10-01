@@ -100,6 +100,8 @@ function logRequest(requestData) {
     ...requestData
   });
 
+  window.gtag('event', 'imaginarium_request', requestData);
+
   const trimmedLogs = logs.slice(-maxEntries);
 
   localStorage.setItem("imaginarium-logs", JSON.stringify(trimmedLogs));
