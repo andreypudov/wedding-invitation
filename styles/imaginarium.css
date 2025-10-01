@@ -1,4 +1,10 @@
-@import url("layout-hero.css?v=1.36");
+@import url("layout-hero.css?v=1.37");
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
 section {
   margin: 0;
