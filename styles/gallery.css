@@ -1,4 +1,4 @@
-@import url("layout-article.css?v=1.37");
+@import url("layout-article.css?v=1.38");
 
 .loader-images {
   display: flex;
@@ -213,6 +213,12 @@
             color: transparent;
             text-indent: -9999px;
             line-height: 0;
+
+            filter:
+              drop-shadow(1px 0 0 var(--fg-primary))
+              drop-shadow(-1px 0 0 var(--fg-primary))
+              drop-shadow(0 1px 0 var(--fg-primary))
+              drop-shadow(0 -1px 0 var(--fg-primary));
           }
         }
 
