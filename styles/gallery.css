@@ -1,4 +1,4 @@
-@import url("layout-article.css?v=1.38");
+@import url("layout-article.css?v=1.39");
 
 .loader-images {
   display: flex;
@@ -163,12 +163,12 @@
 
         &.prev {
           left: 0;
-          z-index: 0;
+          z-index: 1;
         }
 
         &.next {
           right: 0;
-          z-index: 0;
+          z-index: 1;
         }
 
         &.prev, &.next {
