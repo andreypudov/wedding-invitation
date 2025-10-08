@@ -136,7 +136,7 @@
 
       const metadata = await window.loadMetadata(metadataFiles);
       const figures = window.createGallery(imageFiles, metadata);
-      const lightboxes = window.createLightbox(imageFiles, metadataFiles);
+      const lightboxes = window.createLightbox(imageFiles, metadata);
 
       loader.style.display = 'none';
       gallery.style.display = 'block';
