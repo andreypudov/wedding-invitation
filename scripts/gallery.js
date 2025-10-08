@@ -1,6 +1,6 @@
 const ACCOUNT_NAME = 'peipeiandandreysta';
 const IMAGINARIUM_CONTAINER_NAME = 'imaginarium';
-const EMPTY_METADATA_JSON = '{russian: "", mandarin: ""}';
+const EMPTY_METADATA_JSON = '{russian: "", mandarin: "", width: "auto", height: "auto"}';
 
 async function fetchFiles(containerName) {
   try {
@@ -43,17 +43,36 @@ async function loadImaginariumFiles() {
   return await fetchFiles(IMAGINARIUM_CONTAINER_NAME);
 }
 
-function createGallery(imageUrls) {
+async function loadMetadata(metadataUrls) {
+  const metadataList = await Promise.all(metadataUrls.map(url => fetch(url).then(response => {
+    if (!response.ok) {
+      return EMPTY_METADATA_JSON;
+    }
+    return response.json();
+  }).catch(() => EMPTY_METADATA_JSON)));
+
+  return metadataList.reduce((acc, metadata, index) => {
+    const fileName = metadataUrls[index].substring(metadataUrls[index].lastIndexOf('/') + 1, metadataUrls[index].lastIndexOf('.'));
+    acc[fileName] = metadata;
+    return acc;
+  }, {});
+}
+
+function createGallery(imageUrls, metadata) {
   return imageUrls.map((url, index) => {
     const figure = document.createElement('figure');
     const link = document.createElement('a');
     const img = document.createElement('img');
 
+    const fileName = url.substring(url.lastIndexOf('/') + 1, url.lastIndexOf('.'));
+    const fileMetadata = metadata[fileName] || {};
+
     link.id = `imaginarium-grid-${index + 1}`;
     link.href = `#lightbox-imaginarium-${index + 1}`;
     img.src = url;
-    img.alt = '';
     img.loading = 'lazy';
+    img.width = fileMetadata.width || 'auto';
+    img.height = fileMetadata.height || 'auto';
 
     figure.appendChild(link);
     link.appendChild(img);
@@ -62,28 +81,10 @@ function createGallery(imageUrls) {
   });
 }
 
-async function getCaptionFromMetadata(metadataUrls, imageUrl) {
-  const imageName = imageUrl.substring(imageUrl.lastIndexOf('/') + 1, imageUrl.lastIndexOf('.'));
-  const metadataUrl = metadataUrls.find(url => url.includes(imageName) && url.endsWith('.json'));
-
-  if (!metadataUrl) return EMPTY_METADATA_JSON;
-
-  try {
-    const response = await fetch(metadataUrl);
-    if (!response.ok) {
-      return EMPTY_METADATA_JSON;
-    }
-
-    return await response.json();
-  } catch (_) {
-    return EMPTY_METADATA_JSON;
-  }
-}
-
-async function createLightbox(imageUrls, metadataUrls) {
+function createLightbox(imageUrls, metadata) {
   const total = imageUrls.length;
 
-  const entries = await Promise.all(imageUrls.map(async (url, i) => {
+  const entries = imageUrls.map((url, i) => {
     const index = i + 1;
     const prevIndex = index === 1 ? total : index - 1;
     const nextIndex = index === total ? 1 : index + 1;
@@ -117,20 +118,18 @@ async function createLightbox(imageUrls, metadataUrls) {
 
     const figure = document.createElement('figure');
 
-    let captionJson = EMPTY_METADATA_JSON;
-    try {
-      captionJson = await getCaptionFromMetadata(metadataUrls, url);
-    } catch (_) {
-      captionJson = EMPTY_METADATA_JSON;
-    }
+    const fileName = url.substring(url.lastIndexOf('/') + 1, url.lastIndexOf('.'));
+    const fileMetadata = metadata[fileName] || {};
 
     const imageWrapper = document.createElement('div');
     imageWrapper.className = 'image-wrapper';
 
     const img = document.createElement('img');
     img.src = url;
-    img.alt = captionJson.russian || '';
+    img.alt = fileMetadata.russian || '';
     img.loading = 'lazy';
+    img.width = fileMetadata.width || 'auto';
+    img.height = fileMetadata.height || 'auto';
 
     imageWrapper.appendChild(img);
 
@@ -139,9 +138,9 @@ async function createLightbox(imageUrls, metadataUrls) {
     const mandarin = document.createElement('div');
 
     russian.className = 'russian';
-    russian.textContent = truncateWithDots(captionJson.russian || '');
+    russian.textContent = truncateWithDots(fileMetadata.russian || '');
     mandarin.className = 'mandarin';
-    mandarin.textContent = truncateWithDots(captionJson.mandarin || '');
+    mandarin.textContent = truncateWithDots(fileMetadata.mandarin || '');
 
     figcaption.appendChild(russian);
     figcaption.appendChild(mandarin);
@@ -162,7 +161,7 @@ async function createLightbox(imageUrls, metadataUrls) {
     entry.appendChild(content);
 
     return entry;
-  }));
+  });
 
   return entries;
 }
@@ -174,5 +173,6 @@ function truncateWithDots(str, maxLength = 128) {
 }
 
 window.loadImaginariumFiles = loadImaginariumFiles;
+window.loadMetadata = loadMetadata;
 window.createGallery = createGallery;
 window.createLightbox = createLightbox;
