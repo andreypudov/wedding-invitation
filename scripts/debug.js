@@ -34,7 +34,6 @@ function acceptInvite() {
   console.log("%c👉 Instagram: https://www.instagram.com/peipeiandandrey", monoStyle);
   console.log("%c👉 Facebook:  https://www.facebook.com/peipeiandandrey", monoStyle);
 
-  /* Analytics Event */
   window.gtag('event', 'accept_invite', {
     method: 'console'
   });
@@ -51,6 +50,10 @@ function godMode() {
 
   console.log("🛠️ God Mode Activated.");
   localStorage.setItem('debugMode', 'true');
+
+  window.gtag('event', 'god_mode', {
+    method: 'console'
+  });
 }
 
 window.acceptInvite = acceptInvite;
