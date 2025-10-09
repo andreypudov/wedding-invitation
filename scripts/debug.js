@@ -41,18 +41,21 @@ function acceptInvite() {
 }
 
 function godMode() {
-  if (!window.location.href.includes('imaginarium')) {
-    console.warn("⚠️ God Mode can only be activated on the Imaginarium page.");
-    return;
+  if (window.location.href.includes('imaginarium')) {
+    const inputs = document.querySelectorAll('input, textarea');
+
+    inputs.forEach(input => {
+      input.setAttribute('maxlength', '1000');
+    });
   }
 
-  const inputs = document.querySelectorAll('input, textarea');
-  inputs.forEach(input => {
-    input.setAttribute('maxlength', '1000');
-  });
-
   console.log("🛠️ God Mode Activated.");
+  localStorage.setItem('debugMode', 'true');
 }
 
 window.acceptInvite = acceptInvite;
 window.godMode = godMode;
+
+if (localStorage.getItem('debugMode') === 'true') {
+  godMode();
+}
