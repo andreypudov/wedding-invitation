@@ -40,4 +40,19 @@ function acceptInvite() {
   });
 }
 
+function godMode() {
+  if (!window.location.href.includes('imaginarium')) {
+    console.warn("⚠️ God Mode can only be activated on the Imaginarium page.");
+    return;
+  }
+
+  const inputs = document.querySelectorAll('input, textarea');
+  inputs.forEach(input => {
+    input.setAttribute('maxlength', '1000');
+  });
+
+  console.log("🛠️ God Mode Activated.");
+}
+
 window.acceptInvite = acceptInvite;
+window.godMode = godMode;
