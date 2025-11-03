@@ -9,7 +9,7 @@ const STRINGS = {
     invitationTitle: "Дорогие родные, друзья и близкие!",
     invitationDescription: "С радостью сообщаем, что мы женимся! Мы искренне приглашаем вас разделить с нами этот особенный и важный день. Наша свадьба состоится 14 февраля 2026 года, и для нас будет большой честью и счастьем, если вы будете рядом, чтобы разделить нашу радость и благословить наш союз.",
     invitationLocationName: "Место проведения:",
-    invitationLocationValue: "Crowne Plaza Tainan by IHG",
+    invitationLocationValue: "Корона-Плаза, Тайнань",
     invitationCeremonyName: "Церемония:",
     invitationCeremonyValue: "16:00",
     invitationDinnerName: "Праздничный банкет:",
