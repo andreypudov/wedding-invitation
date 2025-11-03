@@ -1,10 +1,10 @@
 const STRINGS = {
   russian: {
-    titleHome: "Свадьба Пейпей и Андрея",
-    titleRSVP: "Подтверждение участия - Свадьба Пейпей и Андрея",
-    title404: "404 - Свадьба Пейпей и Андрея",
-    titleGallery: "Галерея - Свадьба Пейпей и Андрея",
-    titleImaginarium: "Имаджинариум - Свадьба Пейпей и Андрея",
+    titleHome: "Свадьба Пэйпэй и Андрея",
+    titleRSVP: "Подтверждение участия - Свадьба Пэйпэй и Андрея",
+    title404: "404 - Свадьба Пэйпэй и Андрея",
+    titleGallery: "Галерея - Свадьба Пэйпэй и Андрея",
+    titleImaginarium: "Имаджинариум - Свадьба Пэйпэй и Андрея",
 
     invitationTitle: "Дорогие родные, друзья и близкие!",
     invitationDescription: "С радостью сообщаем, что мы женимся! Мы искренне приглашаем вас разделить с нами этот особенный и важный день. Наша свадьба состоится 14 февраля 2026 года, и для нас будет большой честью и счастьем, если вы будете рядом, чтобы разделить нашу радость и благословить наш союз.",
@@ -20,7 +20,7 @@ const STRINGS = {
     invitationAnticipation: "Мы с нетерпением ждём встречи и возможности провести вместе этот особенный День святого Валентина! ❤️",
 
     imaginariumTitle: "Имаджинариум",
-    imaginariumClothesPeiPei: "Одежда Пейпей",
+    imaginariumClothesPeiPei: "Одежда Пэйпэй",
     imaginariumClothesPeiPeiPlaceholder: "Свадебное платье",
     imaginariumClothesAndrey: "Одежда Андрея",
     imaginariumClothesAndreyPlaceholder: "Смокинг",
@@ -46,7 +46,7 @@ const STRINGS = {
     toGallery: "Перейти в галерею",
     toImaginarium: "Создать еще одно изображение",
 
-    peiPei: "Пейпей",
+    peiPei: "Пэйпэй",
     andrey: "Андрей",
   },
   mandarin: {
