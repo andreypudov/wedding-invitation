@@ -1,0 +1,91 @@
+#+title: Design Requirements
+#+author: Andrey Pudov
+#+date: <2025-10-18 Sat>
+
+* 📍 Details below:
+
+** (1) Invitation Sizes (Formal Sizes)
+
+The vendor provides standard envelopes, so we recommend designing based on their standard sizes.
+Below are the basic formats. If you have a special layout or need a template from the vendor, please let us know!
+
+- 👉 *Standard Invitation:*
+
+Folded: 26 x 19.2 cm
+
+Postcard: 13.1 x 19.2 cm
+
+- 👉 Square Invitation:
+
+Folded: 29 x 14.5 cm
+
+Postcard: 14.5 x 14.5 cm
+
+👉 Long Invitation:
+
+Postcard: 21 x 9 cm
+
+** (2) Paper Options (Textures)
+
+- 👉 *Watercolor Paper (300 gsm):*
+Has irregular texture like watercolor paper. Strong ink absorption and elegant finish — gives a refined artistic look.
+
+- 👉 Pearlescent Paper (300 gsm):
+Silver-white color with metallic shine. Creates luxurious tones under different light, classic and elegant. Requires longer drying time.
+
+- 👉 Ivory Paper (300 gsm):
+Soft white tone with visible fibers. Rough in appearance but smooth and firm to the touch. Absorbs ink very well, resulting in richer colors.
+
+- 👉 Linen Paper (280 gsm):
+Fine cross-embossed texture, good ink absorption, pleasant tactile quality.
+
+🐰 If you’d like to see the textures in person, you can schedule a time with 仨樓 to check the paper samples and confirm details before deciding.
+
+** (3) File Format Requirements
+
+If you’re using professional design software like Illustrator (AI) or Photoshop (PSD),
+please make sure your file and format settings follow the specifications below.
+Color mode must be CMYK, 300 dpi.
+
+- 👉 AI files:
+
+Vendor uses CS6, so please save to this version or lower.
+
+Text must be outlined, and photos embedded.
+
+Do not lock layers or objects.
+
+Include bleed (0.2 cm on all sides).
+
+Artboard size = final file size (no extra margins needed).
+
+- 👉 PSD files:
+
+Merge layers or flatten image.
+
+Include 0.2 cm bleed on all sides (no need to extend further).
+
+- 👉 PDF files:
+
+Double-check that dimensions and object placements are correct.
+
+Before converting, make sure fonts are outlined, images are embedded, and no layers are locked.
+
+** (4) File Notes
+
+- 👉 Keep all text, elements, and borders at least 0.8 cm away from edges to avoid being trimmed or leaving uneven borders.
+All file sizes already include 0.2 cm bleed on all sides — no need to extend further.
+
+- 👉 For example: if your invitation is 13.1 x 19.2 cm, design it exactly at that size, with bleed included. (Artboard = final file size.)
+
+- 👉 Do not include bleed lines in the file — trimming is done manually and not perfectly precise. Including bleed lines may cause unwanted black edges.
+
+- 👉 Both thank-you cards and invitations must use CMYK color mode.
+This is very important — the vendor will not convert color modes, as CMYK and RGB have different color ranges.
+Please note that printed colors may slightly differ from screen display; exact color matching is not possible.
+
+- 👉 For any post-processing files (such as foil stamping, UV coating, etc.), you must provide separate layer files with perfectly aligned positions.
+The vendor will not adjust or verify alignment.
+
+- 👉 Post-processing layers must be in 100% K black (CMYK mode required).
+Make sure it’s set correctly — otherwise, it won’t be recognized as K100%.
