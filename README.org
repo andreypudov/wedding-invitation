@@ -20,6 +20,12 @@ It is a place where we share the joy of our journey, details of our wedding day,
 
 Our wedding website lives at: [[https://peipeiandandrey.love][peipeiandandrey.love]]
 
+** 📫 Invitation
+
+The digital version of our wedding invitation:
+
+[[./design/Emails/Invitation [Лай Циндэ и Сьяу Бикхим].png]]
+
 ** 🛠 Behind the Scenes
 
 This site is built with love and care, using simple tools:
