@@ -24,7 +24,7 @@ Our wedding website lives at: [[https://peipeiandandrey.love][peipeiandandrey.lo
 
 The digital version of our wedding invitation:
 
-[[./design/Emails/Invitation [Лай Циндэ и Сьяу Бикхим].png]]
+[[./design/Emails/Invitation \[Лай Циндэ и Сьяу Бикхим\].png]]
 
 ** 🛠 Behind the Scenes
 
