@@ -1,4 +1,4 @@
-const weddingDate = "2026-02-14";
+const weddingDate = "2026-02-14T16:00:00+08:00";
 
 function arabicToMandarin(num) {
   const digits = '零一二三四五六七八九';
@@ -20,17 +20,23 @@ function arabicToMandarin(num) {
   return result;
 }
 
-function daysUntil(targetDateStr) {
-  const today = new Date();
-  const targetDate = new Date(targetDateStr);
+function calculateDaysBetweenDates(dateString1, dateString2) {
+    const date1 = new Date(dateString1);
+    const date2 = new Date(dateString2);
 
-  today.setHours(0, 0, 0, 0);
-  targetDate.setHours(0, 0, 0, 0);
+    if (isNaN(date1.getTime()) || isNaN(date2.getTime())) {
+        console.error("One or both date strings are invalid.");
+        return NaN;
+    }
 
-  const diffTime = targetDate - today;
-  const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    const time1 = date1.getTime();
+    const time2 = date2.getTime();
 
-  return diffDays;
+    const differenceMs = Math.abs(time2 - time1);
+    const msInDay = 1000 * 60 * 60 * 24;
+    const differenceDays = Math.floor(differenceMs / msInDay);
+
+    return differenceDays;
 }
 
 function getLeftTranslation(days) {
@@ -54,7 +60,8 @@ function getDaysTranslation(days) {
 }
 
 function updateCountdown(language) {
-  const daysLeft = daysUntil(weddingDate);
+  const timeNow = new Date().toUTCString();
+  const daysLeft = calculateDaysBetweenDates(timeNow, weddingDate);
   const countdown = document.getElementsByClassName("countdown")[0];
 
   if (language === "mandarin") {
