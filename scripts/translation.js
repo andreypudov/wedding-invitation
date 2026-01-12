@@ -48,6 +48,8 @@ const STRINGS = {
 
     peiPei: "Пэйпэй",
     andrey: "Андрей",
+    weddingDay: "Сегодня мы становимся семьёй!",
+    afterParty: "Наша история началась!",
   },
   mandarin: {
     titleHome: "珮珮和安德烈的婚禮",
@@ -98,6 +100,8 @@ const STRINGS = {
 
     peiPei: "珮珮",
     andrey: "安德烈",
+    weddingDay: "今天我們成為一家人了！",
+    afterParty: "我們的故事開始了！",
   },
 };
 

@@ -25,14 +25,14 @@ function calculateDaysBetweenDates(dateString1, dateString2) {
     const date2 = new Date(dateString2);
 
     if (isNaN(date1.getTime()) || isNaN(date2.getTime())) {
-        console.error("One or both date strings are invalid.");
+        console.error('One or both date strings are invalid.');
         return NaN;
     }
 
     const time1 = date1.getTime();
     const time2 = date2.getTime();
 
-    const differenceMs = Math.abs(time2 - time1);
+    const differenceMs = time2 - time1;
     const msInDay = 1000 * 60 * 60 * 24;
     const differenceDays = Math.floor(differenceMs / msInDay);
 
@@ -41,33 +41,64 @@ function calculateDaysBetweenDates(dateString1, dateString2) {
 
 function getLeftTranslation(days) {
   if (days % 10 === 1 && days % 100 !== 11) {
-    return "остался ";
+    return 'остался ';
   } else if (days >= 2 && days <= 4) {
-    return "осталось ";
+    return 'осталось ';
   } else {
-    return "осталось ";
+    return 'осталось ';
   }
 }
 
 function getDaysTranslation(days) {
   if (days % 10 === 1 && days % 100 !== 11) {
-    return " день";
+    return ' день';
   } else if ([2, 3, 4].includes(days % 10) && ![12, 13, 14].includes(days % 100)) {
-    return " дня";
+    return ' дня';
   } else {
-    return " дней";
+    return ' дней';
   }
 }
 
 function updateCountdown(language) {
   const timeNow = new Date().toUTCString();
   const daysLeft = calculateDaysBetweenDates(timeNow, weddingDate);
-  const countdown = document.getElementsByClassName("countdown")[0];
+  const countdown = document.getElementsByClassName('countdown')[0];
 
-  if (language === "mandarin") {
-    countdown.innerText = "倒數" + arabicToMandarin(daysLeft) + "天";
+  if (daysLeft === 0) {
+    updateHomeOnWeddingDay();
+    return;
+  }
+
+  if (daysLeft < 0) {
+    updateHomeAfterWedding();
+    return;
+  }
+
+  if (language === 'mandarin') {
+    countdown.innerText = '倒數' + arabicToMandarin(daysLeft) + '天';
   } else {
-    countdown.innerText = "До свадьбы " + getLeftTranslation(daysLeft) + daysLeft + getDaysTranslation(daysLeft);
+    countdown.innerText = 'До свадьбы ' + getLeftTranslation(daysLeft) + daysLeft + getDaysTranslation(daysLeft);
+  }
+}
+
+function updateHomeOnWeddingDay() {
+  const fireworkContainer = document.querySelector('.firework-container');
+  const subtitle = document.querySelector('.subtitle');
+
+  if (fireworkContainer) {
+    fireworkContainer.classList.add('enabled');
+  }
+
+  if (subtitle) {
+    subtitle.className = 'subtitle wedding-day';
+  }
+}
+
+function updateHomeAfterWedding() {
+  const subtitle = document.querySelector('.subtitle');
+
+  if (subtitle) {
+    subtitle.className = 'subtitle afterparty';
   }
 }
 

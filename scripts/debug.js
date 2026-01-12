@@ -25,6 +25,8 @@ console.log(`%c
 
 console.log("%cWedding Debug Mode Activated 🛠️", "color: #b61c2b; font-size: 16px; font-weight: bold;");
 console.log("Type %cacceptInvite()%c in the console to RSVP! 🎊", "color: green; font-weight: bold;", "");
+// console.log("Type %cgodMode()%c to unlock God Mode! 🛠️", "color: orange; font-weight: bold;", "");
+console.log("Type %cenableFirework()%c to light up the sky! 🎆", "color: purple; font-weight: bold;", "");
 
 function acceptInvite() {
   console.log("🎉 Yay! You're virtually invited to celebrate love with us. 🎉");
@@ -56,8 +58,17 @@ function godMode() {
   });
 }
 
+function enableFirework() {
+  const firework = document.querySelector('.firework-container');
+  if (firework) {
+    firework.classList.add('enabled');
+    console.log("🎆 Fireworks Enabled!");
+  }
+}
+
 window.acceptInvite = acceptInvite;
 window.godMode = godMode;
+window.enableFirework = enableFirework;
 
 if (localStorage.getItem('debugMode') === 'true') {
   godMode();

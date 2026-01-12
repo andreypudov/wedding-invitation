@@ -22,17 +22,18 @@
     }
   </style>
 
-  <link href="/images/logo.svg?v=1.45" rel="icon" type="image/svg+xml">
+  <link href="/images/logo.svg?v=1.46" rel="icon" type="image/svg+xml">
 
-  <link href="/styles/layout.css?v=1.45" rel="stylesheet" />
-  <link href="/styles/home.css?v=1.45" rel="stylesheet" />
+  <link href="/styles/layout.css?v=1.46" rel="stylesheet" />
+  <link href="/styles/home.css?v=1.46" rel="stylesheet" />
+  <link href="/styles/firework.css?v=1.46" rel="stylesheet" />
 
-  <script src="/scripts/translation.js?v=1.45" type="module"></script>
-  <script src="/scripts/countdown.js?v=1.45" type="module"></script>
-  <script src="/scripts/debug.js?v=1.45" type="module"></script>
+  <script src="/scripts/translation.js?v=1.46" type="module"></script>
+  <script src="/scripts/countdown.js?v=1.46" type="module"></script>
+  <script src="/scripts/debug.js?v=1.46" type="module"></script>
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-WX4P1VKTPE"></script>
-  <script src="/scripts/analytics.js?v=1.45" type="module"></script>
+  <script src="/scripts/analytics.js?v=1.46" type="module"></script>
 </head>
 
 <body>
@@ -60,7 +61,11 @@
         <span class="separator">&</span>
         <span class="andrey">Андрей</span>
       </div>
-      <div class="countdown russian">До свадьбы осталось немного дней</div>
+      <div class="subtitle wedding-before">
+        <div class="countdown russian">До свадьбы осталось немного дней</div>
+        <div class="weddingday russian">Сегодня мы становимся семьёй!</div>
+        <div class="afterparty russian">Наша история началась!</div>
+      </div>
     </div>
   </main>
 
@@ -86,6 +91,15 @@
     </a>
   </footer>
 
+  <div class="firework-container">
+    <div class="firework"></div>
+    <div class="firework"></div>
+    <div class="firework"></div>
+    <div class="firework"></div>
+    <div class="firework"></div>
+    <div class="firework"></div>
+  </div>
+
   <script type="module">
     function applyLanguage(language) {
       window.setLanguage(language);
@@ -94,13 +108,18 @@
       const title = document.querySelector(".title");
       const peipei = document.querySelector(".title .peipei");
       const andrey = document.querySelector(".title .andrey");
-      const countdown = document.querySelector(".countdown");
+      const countdown = document.querySelector(".subtitle .countdown");
+      const weddingday = document.querySelector(".subtitle .weddingday");
+      const afterparty = document.querySelector(".subtitle .afterparty");
 
       document.title = window.getString("titleHome");
       title.className = `title ${language}`;
       peipei.textContent = window.getString("peiPei");
       andrey.textContent = window.getString("andrey");
+
       countdown.className = `countdown ${language}`;
+      weddingday.textContent = window.getString("weddingDay");
+      afterparty.textContent = window.getString("afterParty");
     }
 
     applyLanguage(window.language);
@@ -108,6 +127,6 @@
     window.applyLanguage = applyLanguage;
   </script>
 
-  <script src="/scripts/loader.js?v=1.45" type="module"></script>
+  <script src="/scripts/loader.js?v=1.46" type="module"></script>
 </body>
 </html>
