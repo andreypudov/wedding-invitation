@@ -1,6 +1,6 @@
 const ACCOUNT_NAME = 'peipeiandandreysta';
 const IMAGINARIUM_CONTAINER_NAME = 'imaginarium';
-const EMPTY_METADATA_JSON = '{russian: "", mandarin: "", width: "auto", height: "auto"}';
+const EMPTY_METADATA_JSON = {russian: "", mandarin: "", width: "auto", height: "auto"};
 
 async function fetchFiles(containerName) {
   try {
@@ -35,7 +35,8 @@ async function fetchFiles(containerName) {
 
     return imageUrls;
   } catch (error) {
-    return [];
+    console.error('Failed to load gallery files:', error);
+    throw error;
   }
 }
 
@@ -71,8 +72,12 @@ function createGallery(imageUrls, metadata) {
     link.href = `#lightbox-imaginarium-${index + 1}`;
     img.src = url;
     img.loading = 'lazy';
-    img.width = fileMetadata.width || 'auto';
-    img.height = fileMetadata.height || 'auto';
+    if (fileMetadata.width && fileMetadata.width !== 'auto') {
+      img.width = fileMetadata.width;
+    }
+    if (fileMetadata.height && fileMetadata.height !== 'auto') {
+      img.height = fileMetadata.height;
+    }
 
     figure.appendChild(link);
     link.appendChild(img);
@@ -128,8 +133,12 @@ function createLightbox(imageUrls, metadata) {
     img.src = url;
     img.alt = fileMetadata.russian || '';
     img.loading = 'lazy';
-    img.width = fileMetadata.width || 'auto';
-    img.height = fileMetadata.height || 'auto';
+    if (fileMetadata.width && fileMetadata.width !== 'auto') {
+      img.width = fileMetadata.width;
+    }
+    if (fileMetadata.height && fileMetadata.height !== 'auto') {
+      img.height = fileMetadata.height;
+    }
 
     imageWrapper.appendChild(img);
 
