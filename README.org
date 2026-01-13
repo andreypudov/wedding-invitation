@@ -2,7 +2,7 @@
 #+AUTHOR: Pei Pei and Andrey
 #+DATE: <2025-08-26 Tue>
 
-[[./videos%2Flove-story.desktop.mp4][[[Love Story]]]]
+[[./videos%2Flove-story.desktop.mp4]]
 
 ** 💍 Our Wedding
 
