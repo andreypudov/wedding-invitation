@@ -1,4 +1,4 @@
-@import url("layout-hero.css?v=1.48");
+@import url("layout-hero.css?v=1.49");
 
 main {
   display: flex;
@@ -94,7 +94,6 @@ main {
 }
 
 .video-background {
-  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -103,15 +102,11 @@ main {
   overflow: hidden;
   z-index: -2;
 
-  &.enabled {
-    display: block;
-  }
-
   &::after {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.35);
+    background: rgba(0, 0, 0, 0.32);
   }
 
   video {

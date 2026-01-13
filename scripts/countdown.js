@@ -98,8 +98,6 @@ function updateHomeOnWeddingDay() {
   if (subtitle) {
     subtitle.className = 'subtitle wedding-day';
   }
-
-  enableBackgroundVideo();
 }
 
 function updateHomeAfterWedding() {
@@ -107,16 +105,6 @@ function updateHomeAfterWedding() {
 
   if (subtitle) {
     subtitle.className = 'subtitle afterparty';
-  }
-
-  enableBackgroundVideo();
-}
-
-function enableBackgroundVideo() {
-  const container = document.querySelector('.video-background');
-
-  if (container) {
-    container.classList.add('enabled');
   }
 }
 
