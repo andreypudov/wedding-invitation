@@ -1,4 +1,4 @@
-@import url("layout-hero.css?v=1.49");
+@import url("layout-hero.css?v=1.50");
 
 main {
   display: flex;
@@ -109,9 +109,18 @@ main {
     background: rgba(0, 0, 0, 0.32);
   }
 
-  video {
+  .video-mobile { 
+    display: none; 
+  }
+
+  .video-desktop, .video-mobile {
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+
+  @media (max-width: 768px) {
+    .video-desktop { display: none; }
+    .video-mobile { display: block; }
   }
 }

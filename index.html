@@ -22,18 +22,18 @@
     }
   </style>
 
-  <link href="/images/logo.svg?v=1.49" rel="icon" type="image/svg+xml">
+  <link href="/images/logo.svg?v=1.50" rel="icon" type="image/svg+xml">
 
-  <link href="/styles/layout.css?v=1.49" rel="stylesheet" />
-  <link href="/styles/home.css?v=1.49" rel="stylesheet" />
-  <link href="/styles/firework.css?v=1.49" rel="stylesheet" />
+  <link href="/styles/layout.css?v=1.50" rel="stylesheet" />
+  <link href="/styles/home.css?v=1.50" rel="stylesheet" />
+  <link href="/styles/firework.css?v=1.50" rel="stylesheet" />
 
-  <script src="/scripts/translation.js?v=1.49" type="module"></script>
-  <script src="/scripts/countdown.js?v=1.49" type="module"></script>
-  <script src="/scripts/debug.js?v=1.49" type="module"></script>
+  <script src="/scripts/translation.js?v=1.50" type="module"></script>
+  <script src="/scripts/countdown.js?v=1.50" type="module"></script>
+  <script src="/scripts/debug.js?v=1.50" type="module"></script>
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-WX4P1VKTPE"></script>
-  <script src="/scripts/analytics.js?v=1.49" type="module"></script>
+  <script src="/scripts/analytics.js?v=1.50" type="module"></script>
 </head>
 
 <body>
@@ -101,12 +101,37 @@
   </div>
 
   <div class="video-background">
-    <video autoplay muted loop playsinline>
-      <source src="/videos/love-story.mp4?v=1.49" type="video/mp4">
+    <video class="video-desktop"
+           autoplay muted loop playsinline
+           preload="metadata" loading="lazy"
+           poster="/videos/love-story-placeholder.jpg"
+           aria-hidden="true"
+           disablepictureinpicture>
+      <source src="" type="video/mp4; codecs=av01.0.05M.08">
+      <source src="" type="video/mp4">
+    </video>
+
+    <video class="video-mobile"
+           autoplay muted loop playsinline
+           preload="metadata" loading="lazy"
+           poster="/videos/love-story-placeholder.jpg"
+           aria-hidden="true"
+           disablepictureinpicture>
+      <source src="" type="video/mp4; codecs=av01.0.05M.08">
+      <source src="" type="video/mp4">
     </video>
   </div>
 
   <script type="module">
+    const isMobile = window.innerWidth <= 768;
+    const videoSources = isMobile ? [
+      { src: '/videos/love-story.mobile.av1.mp4' },
+      { src: '/videos/love-story.mobile.mp4' }
+    ] : [
+      { src: '/videos/love-story.desktop.av1.mp4' },
+      { src: '/videos/love-story.desktop.mp4' }
+    ];
+
     function applyLanguage(language) {
       window.setLanguage(language);
       window.updateCountdown(language);
@@ -128,11 +153,28 @@
       afterparty.textContent = window.getString("afterParty");
     }
 
+    function enableVideoBackground() {
+      const desktop = document.querySelector('.video-desktop');
+      const desktopSources = document.querySelectorAll('.video-desktop source');
+      const mobile = document.querySelector('.video-mobile');
+      const mobileSources = document.querySelectorAll('.video-mobile source');
+
+      const video = isMobile ? mobile : desktop;
+      const sources = isMobile ? mobileSources : desktopSources;
+
+      for (let index = 0; index < sources.length; index++) {
+        sources[index].src = videoSources[index].src;
+      }
+
+      video.load();
+    }
+
     applyLanguage(window.language);
+    enableVideoBackground();
 
     window.applyLanguage = applyLanguage;
   </script>
 
-  <script src="/scripts/loader.js?v=1.49" type="module"></script>
+  <script src="/scripts/loader.js?v=1.50" type="module"></script>
 </body>
 </html>
