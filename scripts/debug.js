@@ -27,6 +27,7 @@ console.log("%cWedding Debug Mode Activated 🛠️", "color: #b61c2b; font-size
 console.log("Type %cacceptInvite()%c in the console to RSVP! 🎊", "color: green; font-weight: bold;", "");
 // console.log("Type %cgodMode()%c to unlock God Mode! 🛠️", "color: orange; font-weight: bold;", "");
 console.log("Type %cenableFirework()%c to light up the sky! 🎆", "color: purple; font-weight: bold;", "");
+console.log("Type %cenableBackgroundVideo()%c to set the mood! 🎥", "color: blue; font-weight: bold;", "");
 
 function acceptInvite() {
   console.log("🎉 Yay! You're virtually invited to celebrate love with us. 🎉");
@@ -66,9 +67,17 @@ function enableFirework() {
   }
 }
 
+function enableBackgroundVideo() {
+  const container = document.querySelector('.video-background');
+  if (container) {
+    container.classList.add('enabled');
+  }
+}
+
 window.acceptInvite = acceptInvite;
 window.godMode = godMode;
 window.enableFirework = enableFirework;
+window.enableBackgroundVideo = enableBackgroundVideo;
 
 if (localStorage.getItem('debugMode') === 'true') {
   godMode();
