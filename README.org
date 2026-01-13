@@ -2,8 +2,6 @@
 #+AUTHOR: Pei Pei and Andrey
 #+DATE: <2025-08-26 Tue>
 
-[[./videos%2Flove-story.desktop.mp4]]
-
 ** 💍 Our Wedding
 
 This is the official wedding website for *Pei Pei and Andrey*.
