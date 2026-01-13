@@ -66,8 +66,7 @@ function getDaysTranslation(days) {
 }
 
 function updateCountdown(language) {
-  // const timeNow = new Date().toUTCString();
-  const timeNow = new Date('2026-02-14T12:00:00+08:00').toUTCString(); // For testing purposes
+  const timeNow = new Date().toUTCString();
   const daysLeft = calculateDaysBetweenDates(timeNow, weddingDate);
   const countdown = document.getElementsByClassName('countdown')[0];
 
