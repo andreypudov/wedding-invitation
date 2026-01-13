@@ -1,0 +1,103 @@
+#+title Video encoding
+#+author: Andrey Pudov
+#+date: <2026-01-13 Tue>
+
+* Desktop
+
+** MP4 (H.264, universal fallback)
+
+#+begin_src shell
+- ffmpeg -i love-story.mp4 \
+  -c:v libx264 \
+  -profile:v high -level 4.1 \
+  -vf "scale=1280:-2" \
+  -crf 28 \
+  -preset slow \
+  -pix_fmt yuv420p \
+  -movflags +faststart \
+  -an \
+  love-story.desktop.mp4
+#+end_src
+
+** WebM (VP9)
+
+#+begin_src shell
+- ffmpeg -i love-story.mp4 \
+  -c:v libvpx-vp9 \
+  -vf "scale=1280:-2" \
+  -crf 40 \
+  -b:v 0 \
+  -deadline good \
+  -cpu-used 2 \
+  -row-mt 1 \
+  -an \
+  love-story.desktop.webm
+#+end_src
+
+** AV1 (best compression)
+
+#+begin_src shell
+- ffmpeg -i love-story.mp4 \
+  -c:v libaom-av1 \
+  -vf "scale=1280:-2" \
+  -crf 40 \
+  -b:v 0 \
+  -cpu-used 3 \
+  -row-mt 1 \
+  -pix_fmt yuv420p \
+  -an \
+  love-story.desktop.av1.mp4
+#+end_src
+
+* Mobile
+
+** MP4 (H.264, universal fallback)
+
+#+begin_src shell
+- ffmpeg -i love-story.mp4 \
+  -c:v libx264 \
+  -profile:v high -level 4.0 \
+  -vf "scale=720:-2" \
+  -crf 28 \
+  -preset slow \
+  -pix_fmt yuv420p \
+  -movflags +faststart \
+  -an \
+  love-story.mobile.mp4
+#+end_src
+
+** WebM (VP9)
+
+#+begin_src shell
+- ffmpeg -i love-story.mp4 \
+  -c:v libvpx-vp9 \
+  -vf "scale=720:-2" \
+  -crf 45 \
+  -b:v 0 \
+  -deadline good \
+  -cpu-used 2 \
+  -row-mt 1 \
+  -an \
+  love-story.mobile.webm
+#+end_src
+
+** AV1 (best compression)
+
+#+begin_src shell
+- ffmpeg -i love-story.mp4 \
+  -c:v libaom-av1 \
+  -vf "scale=720:-2" \
+  -crf 45 \
+  -b:v 0 \
+  -cpu-used 3 \
+  -row-mt 1 \
+  -pix_fmt yuv420p \
+  -an \
+  love-story.mobile.av1.mp4
+#+end_src
+
+* Comparison
+
+#+begin_src shell
+- ffplay -f lavfi "movie=love-story.desktop.mp4[v1]; movie=love-story.desktop.av1.mp4[v2]; [v1][v2]hstack"
+#+end_src
