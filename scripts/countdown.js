@@ -16,6 +16,10 @@ function arabicToMandarin(num) {
       result += digits[n] + u;
     }
   }
+  // remove the leading "一" for numbers between 10 and 19
+  if (num >= 10 && num < 20) {
+    return result.substring(1);
+  }
 
   return result;
 }
@@ -29,12 +33,16 @@ function calculateDaysBetweenDates(dateString1, dateString2) {
         return NaN;
     }
 
+    // normalize both the current date and wedding date to midnight
+    date1.setHours(0, 0, 0, 0);
+    date2.setHours(0, 0, 0, 0);
+
     const time1 = date1.getTime();
     const time2 = date2.getTime();
 
     const differenceMs = time2 - time1;
     const msInDay = 1000 * 60 * 60 * 24;
-    const differenceDays = Math.floor(differenceMs / msInDay);
+    const differenceDays = Math.round(differenceMs / msInDay);
 
     return differenceDays;
 }
@@ -42,8 +50,6 @@ function calculateDaysBetweenDates(dateString1, dateString2) {
 function getLeftTranslation(days) {
   if (days % 10 === 1 && days % 100 !== 11) {
     return 'остался ';
-  } else if (days >= 2 && days <= 4) {
-    return 'осталось ';
   } else {
     return 'осталось ';
   }
