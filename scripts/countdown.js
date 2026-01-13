@@ -66,7 +66,8 @@ function getDaysTranslation(days) {
 }
 
 function updateCountdown(language) {
-  const timeNow = new Date().toUTCString();
+  // const timeNow = new Date().toUTCString();
+  const timeNow = new Date('2026-02-14T12:00:00+08:00').toUTCString(); // For testing purposes
   const daysLeft = calculateDaysBetweenDates(timeNow, weddingDate);
   const countdown = document.getElementsByClassName('countdown')[0];
 
@@ -98,6 +99,8 @@ function updateHomeOnWeddingDay() {
   if (subtitle) {
     subtitle.className = 'subtitle wedding-day';
   }
+
+  enableBackgroundVideo();
 }
 
 function updateHomeAfterWedding() {
@@ -105,6 +108,16 @@ function updateHomeAfterWedding() {
 
   if (subtitle) {
     subtitle.className = 'subtitle afterparty';
+  }
+
+  enableBackgroundVideo();
+}
+
+function enableBackgroundVideo() {
+  const container = document.querySelector('.video-background');
+
+  if (container) {
+    container.classList.add('enabled');
   }
 }
 
