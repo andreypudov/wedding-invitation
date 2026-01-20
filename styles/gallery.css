@@ -1,5 +1,12 @@
 @import url("layout-article.css?v=1.51");
 
+.title {
+  &:hover {
+    background: none;
+    transform: none;
+  }
+}
+
 .loader-images {
   display: flex;
   flex-direction: column;

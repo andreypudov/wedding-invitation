@@ -8,22 +8,6 @@
 }
 
 main {
-  .invitation {
-    address {
-      margin-bottom: 1rem;
-
-      a {
-        display: block;
-        color: var(--fg-primary);
-        text-decoration: none;
-
-        .place {
-          text-decoration: underline;
-        }
-      }
-    }
-  }
-
   .form {
     display: flex;
     height: 2000px;
