@@ -10,7 +10,7 @@
 main {
   .form {
     display: flex;
-    height: 2000px;
+    height: 800px;
     justify-content: center;
     width: 100%;
     margin: 0;
