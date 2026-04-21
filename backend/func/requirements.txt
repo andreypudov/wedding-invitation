@@ -9,7 +9,7 @@ replicate==0.25.1
 requests==2.31.0
 
 # Utilities
-python-dotenv==1.0.0
+python-dotenv==1.2.2
 
 # Azure Storage
 azure-storage-blob==12.14.1
